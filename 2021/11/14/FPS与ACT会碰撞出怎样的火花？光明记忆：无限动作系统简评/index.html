@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="今天，11.12日，光明记忆:无限终于发售了，虽然也没有特殊的期待。经过两个小时的体验完成了整个流程，虽然存在一些bug，不过不是很影响游戏体验，整体上与光明记忆第一章相比已经有了长足的进步。">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="今天，11.12日，光明记忆:无限终于发售了，虽然也没有特殊的期待。经过两个小时的体验完成了整个流程，虽然存在一些bug，不过不是很影响游戏体验，整体上与光明记忆第一章相比已经有了长足的进步。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FPS与ACT会碰撞出怎样的火花？光明记忆：无限动作系统简评">
+<meta property="og:url" content="http://yoursite.com/2021/11/14/FPS%E4%B8%8EACT%E4%BC%9A%E7%A2%B0%E6%92%9E%E5%87%BA%E6%80%8E%E6%A0%B7%E7%9A%84%E7%81%AB%E8%8A%B1%EF%BC%9F%E5%85%89%E6%98%8E%E8%AE%B0%E5%BF%86%EF%BC%9A%E6%97%A0%E9%99%90%E5%8A%A8%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AE%80%E8%AF%84/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="今天，11.12日，光明记忆:无限终于发售了，虽然也没有特殊的期待。经过两个小时的体验完成了整个流程，虽然存在一些bug，不过不是很影响游戏体验，整体上与光明记忆第一章相比已经有了长足的进步。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-14T11:11:37.000Z">
+<meta property="article:modified_time" content="2021-11-14T11:52:51.357Z">
+<meta property="article:author" content="MAXLIN">
+<meta property="article:tag" content="游戏分析">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>FPS与ACT会碰撞出怎样的火花？光明记忆：无限动作系统简评 - 林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/valley.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="FPS与ACT会碰撞出怎样的火花？光明记忆：无限动作系统简评">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-11-14 19:11" pubdate>
+        2021年11月14日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      7 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">FPS与ACT会碰撞出怎样的火花？光明记忆：无限动作系统简评</h1>
+            
+            <div class="markdown-body">
+              <p>今天，11.12日，光明记忆:无限终于发售了，虽然也没有特殊的期待。经过两个小时的体验完成了整个流程，虽然存在一些bug，不过不是很影响游戏体验，整体上与光明记忆第一章相比已经有了长足的进步。</p>
+<span id="more"></span>
+
+<p>本文将主要关注此游戏的战斗系统，亦是核心玩法：</p>
+<p><em>第一人称融合动作元素，操控不同风格的能力对敌人进行浮空连击输出，使用你的近战武器进行格挡，并弹反敌人的招式进行破招，享受高速战斗的血腥厮杀之旅。多样化的武器开火模式切换，灼烧伤害、粘性破片、反弹溅射、锁定跟踪弹，总有一把适合你的武器，对敌人造成各式各样的花式攻击吧。</em></p>
+<p>上文是其商店页面的介绍，动作射击玩法。简而言之，就是游戏中有两套战斗系统，一是FPS，二是ACT，这两套系统通过能量值这个机制相连接，ACT系统的出招会消耗能量，FPS系统射击命中敌人时会加快能量的回复。本游戏中这两个系统不能说是紧密相关，只能说是联系聊胜于无。能量也会自动回复。</p>
+<p>ACT攻击消耗能量和FPS攻击回复能量构成了本游戏射击中设想的战斗循环。这个循环如果能打起来，还是比较行云流水的。只有一个比较严重的问题：<strong>当弹夹消耗完毕，能量也消耗空了之后，战斗的节奏就彻底被打断了</strong>，只能选择后退换弹。当然，这个问题也是可解决的：让玩家有多把武器，一把打空后切换武器，接力输出；或者是使用特殊子弹这一机制，让玩家免除了换弹的情节，持续输出。（如何让玩家社保的同时记住使用技能，降低子弹伤害吗？确实可以，但是观感并不是很好）。此外，还有另一个问题：射击的攻击距离是比技能的攻击距离要远得多的，<strong>玩家决定在何种距离上战斗就决定了玩家使用何种战斗系统</strong>，这是一个很考究的问题。</p>
+<p>对应着两套战斗系统，游戏很取巧地依据设定设计了两种战斗情景：现代，主要面对远距离攻击的敌人，辅之以可以阻挡子弹的盾兵，能发射火箭弹的大块头等等，我的子弹对于这些敌人的伤害很高，因此我主要通过射击来消灭敌人；古代，主要面对近战的敌人，远距离攻击都是缓慢的，可弹反的，我的子弹对于这些敌人伤害没有用技能时高，因此我在射击敌人的同时不得不加入技能的使用。</p>
+<p>虽然格挡似乎也能弹反子弹，但是由于子弹的速度过快，以我初上手的水平，很难感知到合适的弹反时机，而在面对容易射死的敌人时，格挡也并非是我的主要策略，为什么不直接射死敌人呢？对于慢速飞行的火箭弹，弓箭，还是很容易弹反，但是相对应的也很容易躲避。从FPS的思路切入游戏，面对飞来物时我的主要行动是进入附近的掩体，而非使用格挡，只有在没有掩体的时候，我不得不使用格挡。</p>
+<p>观察游戏中的两种战斗情景，现代的流程遵循了FPS游戏经典的关卡设计：玩家在线性流程不断前进，敌人在前路上出现，向你跑来并不断射击。古代的流程则遵循了ACT游戏经典的关卡设计：在一个比较空旷的场景中进行战斗，敌人一波一波刷新。</p>
+<p>Boss战也本游戏体验重要的一环，很明显能感受到是我在打一个ACT游戏中的boss，而非是一个FPS游戏中的boss，尽管大多数时候的输出手段都是射击。游戏中的boss分为两种:人型boss和巨型boss。都是可以自由移动的，而boss战的场地是一片空地，和boss的体验相关。</p>
+<p>人型boss有一种霸体值或者护甲值，子弹先消耗护甲值，耗空之后才能伤害到血量，该值能够自动恢复的。子弹对该值消耗低，而技能对于该值消耗高，若敌人处于浮空状态，似乎子弹能无视该值直接消耗血量？这个设计也是主动鼓励玩家去使用技能。因此我对于人型boss的策略就是，将boss击飞浮空，然后砍到没能量，接着突突突直到boss落地，再重复这个循环。</p>
+<p>巨型boss只有血量，但是血量比人型boss高得多。对于这样庞大的敌人，说实话我没有信心去像在黑魂一样在Boss脚边滚来滚去修脚输出，也没有信心能够格挡敌人的攻击。于是，我开始利用射击的攻击距离优势，远远地风筝Boss，由于射击的伤害比较低，我开始使用特殊子弹，结果因为走位失误被boss堵在墙角或者拍到地里（感觉像bug）总之被卡住无法移动然后输出致死。死后特殊子弹并没有恢复，于是不得不使用射击加气刃斩（一个有一定攻击距离的技能）输出boss，当然依旧是风筝战术，还是以磨的方法消灭了boss。</p>
+<p>可见，在巨型boss战中，FPS战斗系统和ACT战斗系统并没有很好的融合在一起，因为我有远程攻击的能力，就倾向于使自己原理这个庞大而恐怖的boss，不去尝试风险更高的近距离输出，最后特殊子弹消耗殆尽，迫于死亡后子弹不回复和boss巨长的血条，才会去尝试有限地使用能够稍远距离攻击的技能。整体的战斗体验也比较无聊拖沓。</p>
+<p>当然了，由于游戏的流程问题，其实也没有什么二周目的动力，我对于这套动作系统的摸索和运用还是很浅显的。说会FPS和ACT的结合，我更希望玩到一个融合得天衣无缝的系统。我能想象这个战斗系统：高节奏，动作华丽，巨爽无比。当然这是很难的，从FPS发展来说也是一个很可贵的尝试，虽然游戏中没有做得那么好，但是依旧能够发现制作者为了达到这个目标做的一些尝试和思考。</p>
+<p>经过搜索FPS+ACT发现了ultrakill这款游戏，似乎评价还不错，有机会会尝试体验下。不过就是画面有些太古早了。 </p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/28/%E5%A4%A7%E9%80%83%E6%9D%80%E7%9A%84%E7%8E%B0%E5%9C%A8%E4%B8%8E%E6%9C%AA%E6%9D%A5%EF%BC%88%E6%80%BB%E7%BB%93%E7%AF%87%EF%BC%89/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">大逃杀的现在与未来（总结篇）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/14/Apex%E6%96%B0%E8%B5%9B%E5%AD%A3%E5%9C%B0%E5%9B%BE%E5%88%86%E6%9E%90/">
+                        <span class="hidden-mobile">Apex新赛季地图分析</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

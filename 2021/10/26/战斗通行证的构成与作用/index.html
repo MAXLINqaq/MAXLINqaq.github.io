@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="用“新星”形容战斗通行证这种付费模式可能不太恰当，或许也能用“如日中天”来形容，根据Gamerefinery的数据，在2018年6月到2021年2月间，在IOS商店畅销榜的前100款游戏中，有51款有使用了战斗通行证这种付费模式。这种发源于Dota2,兴盛于堡垒之夜的付费模式，在多个版本，多款游戏不断完善中，最终得以完善，广泛被运用于玩家熟悉的游戏之中，尤其是免费游戏中。虽然根据不同游戏的玩法，赛">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="用“新星”形容战斗通行证这种付费模式可能不太恰当，或许也能用“如日中天”来形容，根据Gamerefinery的数据，在2018年6月到2021年2月间，在IOS商店畅销榜的前100款游戏中，有51款有使用了战斗通行证这种付费模式。这种发源于Dota2,兴盛于堡垒之夜的付费模式，在多个版本，多款游戏不断完善中，最终得以完善，广泛被运用于玩家熟悉的游戏之中，尤其是免费游戏中。虽然根据不同游戏的玩法，赛">
+<meta property="og:type" content="article">
+<meta property="og:title" content="战斗通行证的构成与作用">
+<meta property="og:url" content="http://yoursite.com/2021/10/26/%E6%88%98%E6%96%97%E9%80%9A%E8%A1%8C%E8%AF%81%E7%9A%84%E6%9E%84%E6%88%90%E4%B8%8E%E4%BD%9C%E7%94%A8/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="用“新星”形容战斗通行证这种付费模式可能不太恰当，或许也能用“如日中天”来形容，根据Gamerefinery的数据，在2018年6月到2021年2月间，在IOS商店畅销榜的前100款游戏中，有51款有使用了战斗通行证这种付费模式。这种发源于Dota2,兴盛于堡垒之夜的付费模式，在多个版本，多款游戏不断完善中，最终得以完善，广泛被运用于玩家熟悉的游戏之中，尤其是免费游戏中。虽然根据不同游戏的玩法，赛">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-26T12:07:08.000Z">
+<meta property="article:modified_time" content="2021-10-26T12:08:37.840Z">
+<meta property="article:author" content="MAXLIN">
+<meta property="article:tag" content="游戏分析">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>战斗通行证的构成与作用 - 林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/valley.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="战斗通行证的构成与作用">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-10-26 20:07" pubdate>
+        2021年10月26日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      6 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">战斗通行证的构成与作用</h1>
+            
+            <div class="markdown-body">
+              <p>用“新星”形容战斗通行证这种付费模式可能不太恰当，或许也能用“如日中天”来形容，根据Gamerefinery的数据，在2018年6月到2021年2月间，在IOS商店畅销榜的前100款游戏中，有51款有使用了战斗通行证这种付费模式。这种发源于Dota2,兴盛于堡垒之夜的付费模式，在多个版本，多款游戏不断完善中，最终得以完善，广泛被运用于玩家熟悉的游戏之中，尤其是免费游戏中。虽然根据不同游戏的玩法，赛季时间，竞争压力等多种因素的影响，战斗通行证在运用时往往也会被做出些许改变，不过，一些核心的要素肯定是会得到保留的。</p>
+<span id="more"></span>
+
+<p>战斗通行证由以下几个基本要素构成：等级，双奖励赛道，周常/日常任务。并不是一个特别复杂的模式，逻辑也很简单：游玩—获得经验—游戏经验以一定比例转化为通行证经验—升级并获得改等级奖励。跟以往的付费模式比较，战斗通行证最重要的一点就是不在付费的时刻立即获得购买的所有内容，而相当于获得了一个资格，拥有了资格以后，还需要达成一定的游戏时间，这个时间往往很长，多半长于没有通行证时习惯上的游玩时间，才能最终获得所有奖励。</p>
+<p>战斗通行证的等级一般由游戏的赛季长短决定，根据目标的玩家游戏时间和体验设置通行证的等级多寡，甚至可以设计为无等级上限，最后采取循环奖励的方法。不过，一个赛季内能更新的东西是有限的，如果等级太多则会显得高价值的奖励如赛季皮肤之类太少，让战斗通行证看起来比较不值，若等级太少，则达成不了增长玩家游戏时间的目的。当然了，等级也可以成为一个可购买的商品，天然地就具有<strong>捆绑销售</strong>的属性：想要获得目标等级的物品，必然购买前置的等级。如果说希望玩家以氪金的方式完成通行证，就可以设置一个比较夸张的等级上限，当然要准备相应的奖励，也就成了一个变相的商城。如果说仅仅希望大多数玩家在一个赛季内能够完成，通行证的等级不会太高，而且会辅以比较奖励经验比较丰厚的任务。通常上等级是不能延续到新赛季的。</p>
+<p>双奖励赛道一般由免费赛道和付费赛道构成，奖励构成上免费赛道里的价值较低，而且并不是每个等级都有奖励。付费赛道是在购买了通行证之后开启的，该赛道上奖励较为丰厚，最重要的一点是会有游戏货币返利，在堡垒之夜和Apex中，满级的战斗通行证的游戏货币返利足以让玩家购买下一赛季的战斗通行证。也就是说，玩家只要一次付费，（每个赛季肝满通行证），就能在之后的每个赛季里永久拥有通行证资格。当然，这种现象并不常见，大部分游戏的返利是无法满足再次购买一次通行证的。一次付费的战斗通行证的出现是以本游戏有大量的免费玩家群体为基础的，而且该品类里的游戏存在高度的<strong>竞争</strong>，<strong>保护现有用户的留存</strong>也是此类战斗通行证存在的目的。毕竟下个赛季通行证免费的资格，是需要本赛季较大量游戏时间去获得的。一个用户的时间是有限的，投入到此游戏中，就没法同时兼顾另一个同品类的游戏了。在其他的游戏中，这样大幅度的返利并不常见，以彩虹六号为例，现如今购买战斗通行证的价格是1200点，完成后返利600点，相当于以后购买战斗通行证半价。</p>
+<p>周常与日常任务的给出最重要的目的就是让玩家更轻松地完成通行证。单独通过每局游戏获取的经验完成通行证是极为痛苦的，白天在公司上班，晚上还要去游戏里上班，久而久之，就失去了动力。任务的存在让玩家的游戏有了目的性，比如使用XX英雄参与XX局游戏这种任务，玩家对于任务及其奖励有一个明确的认知，完成任务之后的大量通行证经验奖励也会给玩家以动力。当然，任务并非无限，不然玩家完成通行证的速度就太快了。此外，任务的设计也需要一些考虑，以彩虹六号早期通行证的任务设计为例：使用手枪击杀一百万名敌人。这是一个社区任务，在一段时间内所有玩家的击杀数量达标后才有奖励，但是手枪本就不是游戏对局中常用武器，从设计的角度看，这或许是一个平常的任务，但是在正常的游戏中强行使用手枪反而会影响自己与队友的体验，最后这个任务只完成了不到三分之一。</p>
+<p>战斗通行证作为一种付费模式，和传统的卖皮肤、卖箱子之类相比，或许收益不是很高。但是这种“收益不高“，对于一些之前没有付费习惯的玩家，尤其是免费游戏的玩家来说，相当于”性价比高“。以Apex110级的战斗通行证为例，每级都有奖励，虽然这些奖励的价值有高有低，玩家很难感知这110个以上的东西中到底有什么比较有用的，可能就会有一种大体上的感觉：”这个皮肤好好看“，”感觉好值“之类的，尤其是捆绑起来之后的价格也比一般销售的皮肤同捆要低之后，于是产生一种付费的冲动。之后，为了获得奖励，也会经常游戏，进而提升了留存。其实，Apex的返利在购买完新赛季的战斗通行证之后，剩下的300点数虽然暂时什么都买不起，但是假如有一天看到了自己心动的皮肤，就进入了一种账户里已经有一些钱，只要再充一点就能买得起了的状态，潜移默化地，养成了一种消费习惯。综上，<strong>保证用户的留存以及逐渐养成付费习惯</strong>就是战斗通行证的最重要的作用了，也直击免费游戏的营收痛点，以后战斗通行证或许能够成为一种游戏内的基础设施。当然了，真正能够吸引玩家的还是玩法与内容。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/30/%E4%B8%BA%E4%BB%80%E4%B9%88APEX%E6%98%AF%E6%97%B6%E4%B8%8B%E6%9C%80%E5%A5%BD%E7%9A%84FPS%E7%B1%BB%E5%A4%A7%E9%80%83%E6%9D%80%E6%B8%B8%E6%88%8F%EF%BC%9A%E5%85%B3%E5%8D%A1%E7%AF%87/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">为什么APEX是时下最好的FPS类大逃杀游戏：关卡篇</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/10/26/Apex%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E4%B8%8B%E6%9C%80%E5%A5%BD%E7%9A%84%E5%A4%A7%E9%80%83%E6%9D%80%E6%B8%B8%E6%88%8F%EF%BC%9A%E6%95%B0%E5%80%BC%E7%AF%87/">
+                        <span class="hidden-mobile">Apex为什么是时下最好的大逃杀游戏：数值篇</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

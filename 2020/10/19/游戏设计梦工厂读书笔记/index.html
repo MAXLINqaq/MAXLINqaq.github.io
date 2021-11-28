@@ -1,0 +1,552 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="一些关于《游戏设计梦工厂》的简单笔记，摘录要点和一些触动我的话。">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="一些关于《游戏设计梦工厂》的简单笔记，摘录要点和一些触动我的话。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="游戏设计梦工厂读书笔记">
+<meta property="og:url" content="http://yoursite.com/2020/10/19/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%A2%A6%E5%B7%A5%E5%8E%82%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="一些关于《游戏设计梦工厂》的简单笔记，摘录要点和一些触动我的话。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-19T14:04:41.000Z">
+<meta property="article:modified_time" content="2020-10-19T17:09:10.715Z">
+<meta property="article:author" content="MAXLIN">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>游戏设计梦工厂读书笔记 - 林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/valley.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="游戏设计梦工厂读书笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-10-19 22:04" pubdate>
+        2020年10月19日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">游戏设计梦工厂读书笔记</h1>
+            
+            <div class="markdown-body">
+              <p>一些关于《游戏设计梦工厂》的简单笔记，摘录要点和一些触动我的话。</p>
+<span id="more"></span>
+
+<h1 id="一-游戏设计基础"><a href="#一-游戏设计基础" class="headerlink" title="一 游戏设计基础"></a>一 游戏设计基础</h1><h2 id="一-游戏设计师的角色"><a href="#一-游戏设计师的角色" class="headerlink" title="一 游戏设计师的角色"></a>一 游戏设计师的角色</h2><p>写游戏日志，记录一些游戏的玩法。</p>
+<p>以玩法为核心设计游戏，建立玩家体验目标</p>
+<p>准备游戏原型，保证核心机制合理</p>
+<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><ol>
+<li>设定玩家体验目标</li>
+<li>构思一个想法或系统</li>
+<li>完成原型</li>
+<li>进行测试</li>
+<li>反复修改</li>
+</ol>
+<p>个人体验：现有一个想法，再去设定玩家体验目标？可能跟公司式的开发有点区别</p>
+<h2 id="二-游戏的结构"><a href="#二-游戏的结构" class="headerlink" title="二 游戏的结构"></a>二 游戏的结构</h2><ol>
+<li>玩家 接受并遵守规则</li>
+<li>目标 使玩家渴望完成</li>
+<li>程序 规定玩的行为</li>
+<li>规则 玩家遵守的设定</li>
+<li>资源 稀缺性的物品</li>
+<li>冲突 阻止玩家实现目标</li>
+<li>边界 游戏和现实的划分</li>
+<li>结果 游戏的结束 输/赢</li>
+</ol>
+<h3 id="让玩家对游戏感兴趣"><a href="#让玩家对游戏感兴趣" class="headerlink" title="让玩家对游戏感兴趣"></a>让玩家对游戏感兴趣</h3><ol>
+<li>挑战 别太难也别太简单</li>
+<li>谜题 解开时有成就感</li>
+<li>前设 让玩家代入游戏</li>
+<li>角色 让玩家移情于角色</li>
+<li>故事 使玩家投入，和玩法结合会更有趣</li>
+<li>戏剧元素</li>
+</ol>
+<p><em>尝试去挑战传统的游戏玩法</em></p>
+<h2 id="三-使用正规元素"><a href="#三-使用正规元素" class="headerlink" title="三 使用正规元素"></a>三 使用正规元素</h2><ol>
+<li>玩家的数量 为特定数量玩家设计的游戏会考虑得更多</li>
+<li>玩家的角色 定义玩家的角色，保持游戏的本质和平衡</li>
+<li>玩家的交互模式 单人对游戏 多人对游戏 玩家对玩家 单边对抗 多变对抗 协作游戏 团队对抗</li>
+<li>目标 可完成的挑战：掠夺 追捕 竞速 排列 救援/逃脱 行为禁止 建设 探索 解密 益智 混合这些目标使游戏更有趣</li>
+<li>操作 注意操作在现实中的可行性</li>
+<li>规则 定义对象和概念 限制行为 决定结果</li>
+<li>资源 命数 单位 生命值 货币 行动 能力加强 特殊区域 时间</li>
+<li>冲突 包括 ：障碍 对手 两难选择</li>
+<li>边界</li>
+<li>结果</li>
+</ol>
+<p>以自己的主观想法模拟世界，提出争议</p>
+<p><em>一旦灵感形成了，它的中心必须有强大的游戏性。如果不能在想法里加入有深度的游戏互动，那么这个想法可能更适合一部微电影或者漫画书</em></p>
+<h2 id="四-运用戏剧元素"><a href="#四-运用戏剧元素" class="headerlink" title="四 运用戏剧元素"></a>四 运用戏剧元素</h2><ol>
+<li>挑战 维持“心流”，不能太难也不能太简单</li>
+<li>玩 包括 竞争类 机会类 带入类 眩晕类 </li>
+<li>故事预设</li>
+<li>角色 包括 系统角色-玩家创造的角色 AI控制的角色-混合型-玩家控制的角色</li>
+<li>故事</li>
+<li>情节发展 戏剧张力的上下起伏，和场景故事相结合</li>
+</ol>
+<h2 id="五-活用动态的游戏系统"><a href="#五-活用动态的游戏系统" class="headerlink" title="五 活用动态的游戏系统"></a>五 活用动态的游戏系统</h2><ol>
+<li>游戏作为一个系统 物体 属性 行为 关系 （随机性与规则）</li>
+<li>系统动态 如 经济系统  简单交换 复杂交换 简单市场 复杂市场 自组织</li>
+<li>与系统进行互动 信息结构 直接控制 间接控制 正面反馈 负面反馈</li>
+<li>调整游戏系统 试玩</li>
+</ol>
+<h1 id="二-设计一款游戏"><a href="#二-设计一款游戏" class="headerlink" title="二 设计一款游戏"></a>二 设计一款游戏</h1><h2 id="六-概念设计"><a href="#六-概念设计" class="headerlink" title="六 概念设计"></a>六 概念设计</h2><ol>
+<li>获得灵感</li>
+<li>修改和优化 技术可行性 市场机遇 艺术考虑 商业政策</li>
+<li>把创意转化为游戏 关注正规元素</li>
+</ol>
+<h2 id="七-原型设计"><a href="#七-原型设计" class="headerlink" title="七 原型设计"></a>七 原型设计</h2><p>原型用来验证玩法，可以先做实物原型，进行核心玩法的可视化，进行简单描述</p>
+<p>从基础，结构，正规细节，精炼一步步完善原型，重建再重建原型，最终超越实物原型</p>
+<h2 id="八-软件原型"><a href="#八-软件原型" class="headerlink" title="八  软件原型"></a>八  软件原型</h2><p>可以用Excel进行数值模拟</p>
+<p>美学原型 脚本 概念艺术 模拟动画 界面原型 音频草稿</p>
+<p>动觉原型 反应游戏的操作</p>
+<p>技术原型 一些系统的可行设计</p>
+<p><em>如果你想创新，不应当执着某物</em></p>
+<p>设计控制方式</p>
+<p>选择视角 俯视角 侧身视角 等距视角 第一人称视角 第三人称视角 </p>
+<p>有效的界面设计 形式应服务于功能，包含某种隐喻，做好可视化，根据特征进行分类，保证视觉上的统一性，听取玩家反馈</p>
+<p>制作原型的工具 语言 引擎 关卡编辑器之类的。</p>
+<h2 id="九-游戏测试"><a href="#九-游戏测试" class="headerlink" title="九 游戏测试"></a>九 游戏测试</h2><p>概念-&gt;预研发-&gt;研发-&gt;QA阶段</p>
+<p><em>别死抱着规则</em></p>
+<p>玩游戏的模式 征服挑战 激发想象 在游戏中放松 与朋友玩乐</p>
+<p>快乐四要素 困难的快乐 简单的快乐 严肃的快乐 群体的快乐</p>
+<p>感情比“刺激-反馈-奖励”循环更重要</p>
+<p>游戏类别矩阵</p>
+<h2 id="十-功能性，完成度，平衡性"><a href="#十-功能性，完成度，平衡性" class="headerlink" title="十 功能性，完成度，平衡性"></a>十 功能性，完成度，平衡性</h2><p>功能性 玩家不需要设计师的帮助就能学会进行游戏</p>
+<p>完成度 没有漏洞的规则，玩家不能走入死胡同</p>
+<p>平衡性 平衡变量 平衡动态 强化关系 优势单位 优势策略 平衡位置 对称式/非对称式</p>
+<p>非对称目标 计时/保护 两机制组合</p>
+<p>技巧的平衡 设置不同的难度水平</p>
+<p>动态平衡 </p>
+<p>平衡电脑控制的人物</p>
+<p>要有模块化思维，有目的的纯粹性，一次只改一处</p>
+<h2 id="十一-乐趣性和易用性"><a href="#十一-乐趣性和易用性" class="headerlink" title="十一 乐趣性和易用性"></a>十一 乐趣性和易用性</h2><p>趣味 挑战 达成目标和超越目标 与他人竞争 扩展个人能力上限 磨练高难度的技巧 创造有趣的选择</p>
+<p>​        玩法 幻想成真 社交 刺激 探索和发现 收集 自我表现 建造/破坏 故事</p>
+<p>吸引力分析</p>
+<p>改变玩家的选择</p>
+<p>决策 谜题 奖励和惩罚 预期 惊喜 进步</p>
+<p>乐趣杀手 微操作过多 停滞 无法逾越的障碍 随机事件 可预知的道路</p>
+<p>易用性测试</p>
+<h1 id="三-像一名游戏设计师一样工作"><a href="#三-像一名游戏设计师一样工作" class="headerlink" title="三 像一名游戏设计师一样工作"></a>三 像一名游戏设计师一样工作</h1><h2 id="十二-团队结构"><a href="#十二-团队结构" class="headerlink" title="十二 团队结构"></a>十二 团队结构</h2><h2 id="十三-开发阶段和方法"><a href="#十三-开发阶段和方法" class="headerlink" title="十三 开发阶段和方法"></a>十三 开发阶段和方法</h2><h2 id="十四-沟通你的设计"><a href="#十四-沟通你的设计" class="headerlink" title="十四 沟通你的设计"></a>十四 沟通你的设计</h2><p>可视化</p>
+<p>流程图 </p>
+<p>游戏描述</p>
+<p>设计文档的构成 详情参见 P461-P463</p>
+<ul>
+<li>设计概要，声明</li>
+<li>面向受众平台，市场</li>
+<li>游戏玩法</li>
+<li>角色</li>
+<li>剧情</li>
+<li>世界</li>
+<li>媒介列表</li>
+</ul>
+<p>技术文档的构成 详情参见 P464-P465</p>
+<h2 id="十五-理解新的游戏产业"><a href="#十五-理解新的游戏产业" class="headerlink" title="十五 理解新的游戏产业"></a>十五 理解新的游戏产业</h2><h2 id="十六-如何带你的创意进入游戏"><a href="#十六-如何带你的创意进入游戏" class="headerlink" title="十六 如何带你的创意进入游戏"></a>十六 如何带你的创意进入游戏</h2><p>个人简历写作</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/10/20/aShortHike%E5%88%86%E6%9E%90/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">aShortHike分析</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/11/12/%E6%AD%8C%E5%BE%B7%E7%99%BE%E5%B9%B4%E9%9A%8F%E6%83%B3/">
+                        <span class="hidden-mobile">歌德百年随想</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

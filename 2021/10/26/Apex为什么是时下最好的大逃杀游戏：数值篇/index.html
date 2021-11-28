@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="大逃杀的核心玩法正是在于[搜刮：跑毒：战斗]三者的循环，实际游戏中这三者并不会按照既定的顺序进行。也不会均匀地发生，在某些早期的大逃杀游戏中，譬如PUBG，能到前五的玩家的跑毒时间占总游戏时可能会超过一半以上。而大逃杀的核心体验在于战斗的体验，绝大部分的乐趣都来自于战斗，然后胜利，如果能一直胜利到最后吃鸡，将会带来最最强烈的正反馈。而对于搜刮和跑毒，其乐趣性确实不强，甚至可以说是有点无聊，但同样是">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="大逃杀的核心玩法正是在于[搜刮：跑毒：战斗]三者的循环，实际游戏中这三者并不会按照既定的顺序进行。也不会均匀地发生，在某些早期的大逃杀游戏中，譬如PUBG，能到前五的玩家的跑毒时间占总游戏时可能会超过一半以上。而大逃杀的核心体验在于战斗的体验，绝大部分的乐趣都来自于战斗，然后胜利，如果能一直胜利到最后吃鸡，将会带来最最强烈的正反馈。而对于搜刮和跑毒，其乐趣性确实不强，甚至可以说是有点无聊，但同样是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apex为什么是时下最好的大逃杀游戏：数值篇">
+<meta property="og:url" content="http://yoursite.com/2021/10/26/Apex%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E4%B8%8B%E6%9C%80%E5%A5%BD%E7%9A%84%E5%A4%A7%E9%80%83%E6%9D%80%E6%B8%B8%E6%88%8F%EF%BC%9A%E6%95%B0%E5%80%BC%E7%AF%87/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="大逃杀的核心玩法正是在于[搜刮：跑毒：战斗]三者的循环，实际游戏中这三者并不会按照既定的顺序进行。也不会均匀地发生，在某些早期的大逃杀游戏中，譬如PUBG，能到前五的玩家的跑毒时间占总游戏时可能会超过一半以上。而大逃杀的核心体验在于战斗的体验，绝大部分的乐趣都来自于战斗，然后胜利，如果能一直胜利到最后吃鸡，将会带来最最强烈的正反馈。而对于搜刮和跑毒，其乐趣性确实不强，甚至可以说是有点无聊，但同样是">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-26T11:58:28.000Z">
+<meta property="article:modified_time" content="2021-10-26T12:04:52.296Z">
+<meta property="article:author" content="MAXLIN">
+<meta property="article:tag" content="游戏分析">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>Apex为什么是时下最好的大逃杀游戏：数值篇 - 林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/valley.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Apex为什么是时下最好的大逃杀游戏：数值篇">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-10-26 19:58" pubdate>
+        2021年10月26日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Apex为什么是时下最好的大逃杀游戏：数值篇</h1>
+            
+            <div class="markdown-body">
+              <p>大逃杀的核心玩法正是在于[<strong>搜刮：跑毒：战斗</strong>]三者的循环，实际游戏中这三者并不会按照既定的顺序进行。也不会均匀地发生，在某些早期的大逃杀游戏中，譬如PUBG，能到前五的玩家的跑毒时间占总游戏时可能会超过一半以上。而大逃杀的核心体验在于战斗的体验，绝大部分的乐趣都来自于战斗，然后胜利，如果能一直胜利到最后吃鸡，将会带来最最强烈的正反馈。而对于搜刮和跑毒，其乐趣性确实不强，甚至可以说是有点无聊，但同样是不可缺少的阶段，因为搜刮代表着资源成长，而跑毒则是毒圈这个机制的必然结果，成长和毒圈对于大逃杀同样是不可或缺的。能够在市面上大卖的大逃杀游戏总会使用一些特别的设计来突出战斗的体验，减小跑毒和搜刮的时间，进而优化体验。更好的体验也正是它们大卖的原因，而且，我认为Apex正是其中的佼佼者。</p>
+<p>标题就是本文的核心论点，我将从APEX的数值设计出发，围绕Apex单局游戏的资源分布、玩家成长，枪械的数值（这部分不会太细），商业化方案，讨论一些具体的机制，是如何提升Apex的大逃杀体验的。之后的文章中则会分别涉及关卡（地图）设计与具体的战斗系统。当然了，仅仅是表达我个人的一些想法，如有错漏或是不同的意见，欢迎在评论区讨论。</p>
+<span id="more"></span>
+
+<h3 id="从资源分布开始"><a href="#从资源分布开始" class="headerlink" title="从资源分布开始"></a>从资源分布开始</h3><p>话说天空一声巨响，大逃杀品类闪亮登场，从那时起，地图上的资源就呈现出区域聚集，区域内部随机的分布方式。也正是这样相对随机的资源分布，造就了每次游戏挑同一个区域，进入同一栋房间，收获的物资也不尽相同，这是导致每次游戏体验不同的一个开始。然而，虽说资源是随机分布在区域里的，但是玩家对于这个区域会有一个整体的穷富认知，这也是玩家有目的地规划成长的前提，如果期待得到更快速的成长，就会主动选择资源更加丰富的区域。尽管有了大概的认知，但是由于随机性的存在，许多时候的成长依旧不能达到预期，玩家趋于避战继续搜索，最终拖慢了游戏的节奏，影响体验。因此，可以得到这样一个结论，资源的随机分布有利于创造多样的游戏体验，但过于随机同样也会影响体验。</p>
+<p>为了应对随机的问题，Apex在资源区域聚集、区域内随机分布方式的基础上，对于玩家资源的获得机制进行了以下几点增补：</p>
+<p><strong>降低了部分建筑旁资源刷新的随机性。</strong>这点在地图上一些新加入的区域集中体现。在可升降的瞭望塔附近，一般大概率刷新狙击枪和其配件、子弹，小概率刷新精确射手步枪。在坠毁现场上层平台的中间区域的中心，大概率刷新一件三级护甲。</p>
+<p><strong>确定性强的高级资源提供机制</strong>，比如空投，藏宝库，战利品马文，炸猪，货箱机器人。最典型的就是空投，这也是自大逃杀出现就存在的一个机制。但是在Apex中，空投也有着自己的特色，现版本中游戏的后期玩家争夺空投的目的是极为明确的：获得克莱贝尔狙击枪，唯一一把能够一发爆头击倒的武器。而其他的空投武器相对比配满配件的一般武器并没有特别的优势。更多的是作为一种武器轮换的机制，每隔几个版本将一些武器轮换进入空投，再将空投中的武器移出。当然克莱贝尔是不会被移出空投的，它也只适合存在于空投中，在游戏的后期出现。而在中前期空投的吸引力就没有那么强了，此时空投出现武器的概率较低，一般只作为顺路的资源补充，或者没有目标时的短期目标。最好的是爆炸舱室，爆炸舱室可以提供武器，子弹，配件，提供的配件通常等级很高，数量较多。需要用爆炸物打开，因此会造成很大的声响，而且位置固定，会为附近的队伍提供精确的信息，好就好在这是一个高风险高回报的机制。此外还有“命脉”这个传奇的大招，空投补给，保证能对队伍的装备进行升级，如果全二级护甲，使用后就必然能获得三级护甲，这是可以预见的。</p>
+<p><strong>获得确定资源的机制。</strong>在地图上的一些区域内设置了制造金属和制造器。玩家通过收集制造金属，在制造器消费，能够制造的物品一部分固定、一部分轮换。制造器机制的出现实际上是降低了某些高级物资的获得难度，游玩的过程中往往也会根据轮换的配件选择不同的武器，有利于丰富的体验。而空投制造器的引入，个人感觉它的数量是比空投多上不少的，在跑毒的时候也能获得一部分需要的资源，补充了跑毒这段时间没有成长的缺陷。当然，制造器在制造的过程中也会发出一圈显眼的特效，给附近的其他小队以信息。</p>
+<p><strong>伤害的固有奖励。</strong>这是从进化护盾这一机制的引入开始的。进化护盾的机制如下：对敌人累计造成一定伤害之后，护盾上限值增加。总共能进化三次，护甲值对应为：50/75/100/125，每阶段需要伤害：150/300/750。（现版本进入游戏默认一级护盾）。也就是说，只要对敌人造成伤害，就已经得到了奖励，哪怕是敌人溜走了，造成的伤害不断累积也能使护盾进化。如果能够消灭敌人，除了箱子里的战利品，交战过程中大量的伤害也会使护甲更容易进化，最终导致一局游戏中交战更多的队伍往往护甲更好，为最后的战斗带来一些优势，而且最高级的护甲只能通过进化得来。</p>
+<p>因为这些机制是逐渐加入到游戏中去的，在当下的版本中也会存在一些不太管用的机制，比如危险区：高级战利品刷新几率提高并且有几率获得金色武器。由于地图的更新，很多新加入的区域放进了上述更多的资源提供机制，比如同时有瞭望塔/爆炸舱室/制造器存在，显得危险区没有那么大的吸引力了。而危险区也并非是一个足够“优美”的机制，因为在成长的早期提供金色武器过于强力，实际上是帮玩家直接跳过了武器的成长过程。若是刷新了一把较难上手的冷门武器，就显得过于鸡肋，食之无味弃之可惜。当然了，冷门武器的出现就是另一个设计的问题了。</p>
+<p>说了这么多，这些机制都是为了降低搜刮的随机性，整体上简化搜刮的过程，加速玩家的成长，同时还可能降低索敌难度，进而引导玩家之间发生战斗，最终服务于大逃杀最为核心的战斗体验。</p>
+<h3 id="玩家成长与枪械数值"><a href="#玩家成长与枪械数值" class="headerlink" title="玩家成长与枪械数值"></a>玩家成长与枪械数值</h3><p>在大逃杀游戏中，玩家的成长来自于搜刮。而刚落地的搜刮十分重要，往往也是生死攸关，Apex在玩家落地时直接为玩家赋予了一级的护盾和两个小电和小药，也正是为了降低搜刮随机的资源刷新带来的成长不平衡，不再会出现交火双方只有一方有护甲的情况。此外，玩家只要获得武器之后，就会自发地寻找附近的敌人进行战斗，而不是继续搜寻一件基础的护甲。既增强了这场重要的战斗的公平性，又促进了这场战斗的发生。</p>
+<p>如上文所属，搜刮不再是一种随机的行为，而是被赋予了目的性、确定性，玩家大概能预期一个地方到底有什么东西，搜刮完成了这个地区之后装备大概会到一个什么水平，在长期的游戏中，至少我和我的队友在一局游戏的开始，一般有几个跳伞的必选地点，我们知道这些地点的资源能够提供一定的资源，而且附近也大概率会有敌人，而接下来的策略就是进行一定搜刮之后，寻找附近的敌人进行战斗。这或许降低了大逃杀游戏随机的体验？但在我看来并不会，游戏的前期的确定性反而为一局游戏的体验设定了最小化的保障，熟悉的环境，可预期的资源和敌人，让玩家能够更好地度过第一场战斗，这场最危险的战斗。完成这场战斗之后，大地图就基本是天高任鸟飞了，对于没有经历落地战的队伍，往往能够有一些装备/物资的优势，对于一些特别幸运的队伍，装备/物资也不会被拉得太开。</p>
+<p>此外，消灭敌人后的战利品搜刮也是Apex中成长的一个重要方法，这是武器装备的成长性和通用性造成的。此外，Apex还使箱子的颜色呈现为箱中最高等级的配件/物资，突显价值。对于箱中护甲值的自动补充，进化护盾造成伤害的成长以及一些具体的枪械数值，还是等到后续关于战斗系统的文章再叙述吧。</p>
+<p>关于武器的成长性，其实也是很有意思的一点。每种武器都有一些配件槽位，某些配件分为不同的等级，等级不同的配件对武器的提升也不尽相同。</p>
+<p>装备等级的引入大大拉长了单局大逃杀游戏内的成长，为了获得成长，玩家倾向于选择那些高价值高风险的资源获得方式，倾向于跟其他的敌人发生战斗，以获得他们的资源，倾向于在地图中跑来跑去搜索敌人，而非蹲在决赛圈的房子里。当然核心的驱动还是最终的吃鸡，只不过为了吃鸡，就必须去寻求装备成长，假如选择避免战斗的策略，就自动放弃了这样的成长，导致在决赛圈的时候面对其他的队伍时将有绝对的劣势。</p>
+<p>总而言之，这套简单明了的装备体系赋予了玩家成长的目标，正是这种获得成长的冲动驱动玩家去战斗，因此战斗的目的也被改变了，不仅仅是去释放搜刮的资源，更是去追寻更高的装备成长。在整体上优化了大逃杀的[搜刮：跑毒：战斗]的循环，为这些行为附加了成长的目的，同时这个达成这个目的的手段是和大逃杀最终的目的——消灭敌人的手段是完全符合的，于是乎无目的的搜刮以及弱目的的跑毒，替代之的是主动地索敌参战，</p>
+<p>一些有可能引来敌人的 资源获取方式，最终的结果就是单局游戏中战斗发生的更多。先不论一场战斗具体的体验（在战斗系统篇阐述），假设战斗体验只要发生就能带来一定快感，从落地到胜利经历的战斗越多，一局的体验自然就越好。这样一来，就带来了更好的游戏体验。</p>
+<h3 id="商业化"><a href="#商业化" class="headerlink" title="商业化"></a>商业化</h3><p>说两点我注意到的比较重要的信息。</p>
+<p>免费游戏的付费。也就是战斗通行证，Apex的战斗同行证一经购买，只要能够升到一定等级,就能够获得足够的返利金币用以购买下一赛季的战斗通行证。这样高返利的战斗通行证其实并不常见，设计目的也从让玩家再次购买变成了拉玩家的留存，当然对于玩家也是好事，这或许也是因为大逃杀这个品类竞争比较激烈，拉用户显然比多赚钱更重要。当然，重生也不亏，通行证几乎已经成为了我周围玩家的必备之物，相当于免费游戏也实现了一次付费。</p>
+<p>高价值的氪金目标。区分于一般的金色皮肤，有记忆点，能够与普通皮肤区分开来。甚至能够提供一些话题讨论度。在Apex中表现为传家宝。</p>
+<p>商业化其实是游戏外的东西，对单局游戏也没有啥太多的影响，或许战斗通行证的周常任务可以起到一个引导玩家尝试不同英雄/武器，走出舒适区的效果。商业化也不能说不重要，甚至有时决定一个游戏的生死。但是只要把核心体验做好了，做出区别了，有很多人来玩了，赚钱也就不是那么困难了，所以说，打铁还需自身硬啊</p>
+<p>下期，将从地图上的一些设计讨论是如何有利于战斗的核心体验。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/26/%E6%88%98%E6%96%97%E9%80%9A%E8%A1%8C%E8%AF%81%E7%9A%84%E6%9E%84%E6%88%90%E4%B8%8E%E4%BD%9C%E7%94%A8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">战斗通行证的构成与作用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/06/19/%E5%85%B3%E4%BA%8E%E5%A4%9A%E4%BA%BAFPS%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/">
+                        <span class="hidden-mobile">关于多人对战FPS的一点思考</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

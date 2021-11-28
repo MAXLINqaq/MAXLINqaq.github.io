@@ -1,0 +1,496 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="本文是前几篇Apex为什么是时下最好的大逃杀游戏的系列的总结篇。经过几周的沉淀，又有了新的灵感，统合前几篇文章中的观点，为本系列画上一个完美的句号。">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="本文是前几篇Apex为什么是时下最好的大逃杀游戏的系列的总结篇。经过几周的沉淀，又有了新的灵感，统合前几篇文章中的观点，为本系列画上一个完美的句号。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大逃杀的现在与未来（总结篇）">
+<meta property="og:url" content="http://yoursite.com/2021/11/28/%E5%A4%A7%E9%80%83%E6%9D%80%E7%9A%84%E7%8E%B0%E5%9C%A8%E4%B8%8E%E6%9C%AA%E6%9D%A5%EF%BC%88%E6%80%BB%E7%BB%93%E7%AF%87%EF%BC%89/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="本文是前几篇Apex为什么是时下最好的大逃杀游戏的系列的总结篇。经过几周的沉淀，又有了新的灵感，统合前几篇文章中的观点，为本系列画上一个完美的句号。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-28T08:19:22.000Z">
+<meta property="article:modified_time" content="2021-11-28T08:37:13.106Z">
+<meta property="article:author" content="MAXLIN">
+<meta property="article:tag" content="游戏分析">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>大逃杀的现在与未来（总结篇） - 林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/valley.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="大逃杀的现在与未来（总结篇）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-11-28 16:19" pubdate>
+        2021年11月28日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.1k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">大逃杀的现在与未来（总结篇）</h1>
+            
+            <div class="markdown-body">
+              <p>本文是前几篇Apex为什么是时下最好的大逃杀游戏的系列的总结篇。经过几周的沉淀，又有了新的灵感，统合前几篇文章中的观点，为本系列画上一个完美的句号。</p>
+<span id="more"></span>
+<h3 id="再探核心体验"><a href="#再探核心体验" class="headerlink" title="再探核心体验"></a>再探核心体验</h3><p>我常思考Apex的核心体验到底是什么？战斗的光芒太盛了，盖过了真正重要的东西。前几篇文章中我对于Apex核心体验的理解依旧是爽快的战斗体验。但是，把战斗的过程剥开洗净，你就会发现Apex这种快节奏大逃杀的核心体验的本质：</p>
+<p><strong>面对战斗中的各种突发情况，几乎没有思考的时间，但是必须做出判断</strong>：关于敌我态势分析，关于是否战斗，若战，如何走位，僵持还是逼近，何时使用技能，使用什么技能……若退，退向哪个方向。<strong>在很短的时间内，玩家得到大量的信息，并必须做出大量的决策，以及基于决策的操作。</strong>在这段时间内，玩家进入了极为专注与兴奋的状态，也就是所谓的“心流”中。这样的时间持续的越久，最终获得的满足以及快乐也就更多，体验也就要更好。请注意：<strong>真正决定战斗体验的并不是出去了多少发子弹，最终舔到了多少战利品</strong>，战斗中的突突突，爆炸只不过是战斗的表象，最最重要的部分是在这些刺激下短时间内做出的那些选择（决策和操作），正是这些选择决定了战斗的结果和最终的体验。</p>
+<p>通过做出正确决策，获得最终的胜利，在消灭敌人之后的“爽”背后，隐藏的是策略成功的成就感和胜利感，像是进行了一场成功的狩猎，与和自己实力相当的对手博弈，并且成功战胜敌人。而不仅是单纯的狩猎过程中的血脉喷张的爽快感。</p>
+<p>一旦意识到了这一点，之前一些说不通的地方现在也就说得通了。前几篇文章中的战斗体验是不具体的，只有一个好坏的大概描述。现在的战斗体验就是具体的，可量化的，姑且提出几个参数：</p>
+<ul>
+<li><p>单位时间内信息（外界刺激）的接收强度。由战斗的激烈程度决定。</p>
+</li>
+<li><p>单位时间内玩家做出的决策和操作。收到接收的信息强度和一些个人因素的影响。</p>
+</li>
+<li><p>从开始战斗到战斗结束的时间。结束可能是被消灭或是消灭敌人。表现这段“心流”的持续时间。</p>
+</li>
+</ul>
+<p><strong>在只有信息接受但是没有有效决策的情况下，战斗体验是较为单薄的</strong>。以一个例子为证：开局时我被打倒了，但是侥幸没死。这一片建筑发生了激烈的交火。我打完药赶过去时只剩下最后一队的一个人，很轻松将其消灭，附近留下了十几个箱子，虽然舔包很好，几乎一波肥，但称不上有多少成就感，胜利感。</p>
+<p><strong>在做出决策和操作但是外界刺激不够的情况下，战斗体验也是较为单薄的</strong>。以一个例子为证：远距离地使用狙击枪与敌人对射，有简单决策与操作，看到有人开火就行，信息的接受也是很少的。双方远距离对枪很快就变成了一个无聊的过程，注意力也会很快分散，达不到进入“心流”的程度。</p>
+<p><strong>在战斗持续时间很短的情况下，战斗体验同样是单薄的</strong>。很快的将敌人消灭，快速进入“心流”同时也快速退出。总会有一种“对面怎么这么菜”的感觉，导致最后获得的成就感胜利感较弱。我们可以想象这样两种情况：两个超神队友带飞，你还没打上几枪敌人就死光了，参与感极差；两个铸币队友白给，你消灭了和自己对位的敌人，对面还剩一个，你凭借着自己的理解卡门，爬到高处，躲入掩体…总之力挽狂澜拯救小队获得胜利。这两种情况的体验好坏是不言而喻的。</p>
+<p>现在就能判断一场战斗是否给玩家带来好的体验了。它一定是<strong>激烈</strong>的，代表着玩家在<strong>短时间内接收大量信息</strong>，隐含着两只队伍已经短兵相接，而非在远距离慢悠悠地对枪。面对近在咫尺的敌人，玩家<strong>处于战场的中心</strong>，必须<strong>在短时间内做出大量判断</strong>，利用一切可以利用的东西打赢这场战斗：门，高点，技能。已经形成了一种下意识的反应：进房，上高点，进掩体……在敌人被完全消灭之前，<strong>成功的判断保证了心流</strong>的延续。胜利与否并不是影响战斗体验的决定性要素。假如一个玩家在劣势条件下，比如说第二队突然到来，队友已经消灭，但是通过成功的决策全身而退，甚至还捡起复活队友的牌子，他的这场战斗的体验也是相当不错的。</p>
+<h3 id="Doom的回响"><a href="#Doom的回响" class="headerlink" title="Doom的回响"></a>Doom的回响</h3><p>其实“面对战斗中的各种突发情况，几乎没有思考的时间，但是必须做出判断”的体验，<strong>也正是Doom的体验</strong>。在一个充满怪物的迷宫中快速奔跑，与各种敌人进行作战，这一点上是相通的。Doom的资源管理要素同样在大逃杀游戏中有所体现，有限的背包空间和物资收集。虽然大逃杀的地图是开放的，但是资源聚集的区域天然地就对应着Doom中的迷宫结，而两个资源聚集区域之间的道路对应着联系迷宫结的通道。虽然不能把Apex用Doomlike游戏来形容，但毫无疑问它们在游戏机制上的联系要比Doom之后的以“半条命”为标志的重剧情的FPS游戏更加紧密。</p>
+<p>当然了，我是剧情FPS游戏的狂热拥趸，永远也忘不了小时候玩的那些使命召唤，以及高考前一个月每天中午玩一会打通的生化奇兵：无限。</p>
+<p>在Doom中，玩家可以通过<strong>背板</strong>来应对刷怪，控制资源。玩得多了突发情况也就不再突发了。但是，在Apex中，由于是玩家对玩家的战斗，背板也失去了作用，可以对一个区域是否有人有一个大概的判断，但是具体的战斗如何发生是无法预料的。于是，在这个开放的“迷宫”中，与随机刷新的敌人们（也就是其他玩家）进行对战，随机刷新的毒圈为玩家规定了不同的“通道”和安全的“迷宫结”，谨慎地使用资源，活到最后。正是<strong>不确定性的引入</strong>，彻底使这些旧机制焕发出了新的生命力。</p>
+<h3 id="推翻前几篇文章中的一个观点"><a href="#推翻前几篇文章中的一个观点" class="headerlink" title="推翻前几篇文章中的一个观点"></a>推翻前几篇文章中的一个观点</h3><p>在前几篇文章中，我提到“战斗的完成”，只有让战斗完成，才会给玩家带来好的体验。现在看来，其实并非如此。<strong>第三队的突然到来，增加了外部刺激，反而为走下坡的“心流”曲线注入了强心剂</strong>，是否继续搜刮，退走还是继续周旋也成了玩家必须要做出的决策。不必要保证什么“战斗的完成”，这是多此一举的。重新以此为基础分析新图的体验差异，是由于某些地形太过开阔，各支队伍趋于使用狙击枪对射，降低了战斗的复杂度，减少了外界刺激，进而使战斗无聊化。但是在其他一些区域，能够很好地聚集多支队伍，发生大混战，参与这样的战斗是很考验心力的，选择去攻击陷入劣势的队伍，同时防止己方收到夹击。强烈的刺激、必须的决策，能带来很好的战斗体验。<strong>要保证的并非战斗的完成，而是战斗的激烈程度。</strong></p>
+<h3 id="修正前几篇文章中的一个观点"><a href="#修正前几篇文章中的一个观点" class="headerlink" title="修正前几篇文章中的一个观点"></a>修正前几篇文章中的一个观点</h3><p>在前几篇文章中，我提到“成长的动力”。装备成长的引入为战斗赋予了目标，主动促使玩家进行战斗。但是仔细分析玩家在游戏中的目标，就会发现这个理由并不太成立。</p>
+<ul>
+<li><p>主要目标：获得胜利/上分（在排位赛中）</p>
+</li>
+<li><p>阶段目标：成长/消灭敌人（人头数计入上分数）</p>
+</li>
+<li><p>小目标：搜刮，战斗…</p>
+</li>
+</ul>
+<p>其实<strong>促进战斗的核心动力是因为人头数计入排位分数</strong>。而非什么为了获得成长。搜刮敌人战利品箱带来的成长只是作为战斗胜利的一个添头。</p>
+<p>不过，成长的动力使一只队伍在战斗发生的地点<strong>停留的时间变得更久</strong>了，为循声而来的敌人到来留出了时间，反而<strong>增加</strong>了<strong>战斗发生</strong>的机会。不搜完舍不得走了属于是。而在游戏的后期，成长的动力也会促使玩家冒着一定的风险去舔空投，以获得强力的空投武器。在这两点上，成长的引入确实会促进战斗的发生。但是，我认为，成长被拉长最重要的一点还是能断绝以苟为战术的小队的吃鸡之路，避战将会失去很大一部分成长的机会，使一只避战的队伍和一只久经沙场的队伍在决赛圈相遇时拉开比较大的装备差距，<strong>间接鼓励玩家之间发生战斗</strong>。</p>
+<h3 id="与其他FPS相比较"><a href="#与其他FPS相比较" class="headerlink" title="与其他FPS相比较"></a>与其他FPS相比较</h3><p>长久以来，我对FPS的乐趣的理解是比较肤浅的。</p>
+<ul>
+<li><p><strong>最开始的理解停留在杀敌的爽快感上</strong>。这是小时候玩CF的直观体验，我一直记得在团队竞技里那9A91一局杀了六七十个。或者是在CS里面甩狙秒人。纯凭反应力，而没有多少思考加入。</p>
+</li>
+<li><p><strong>后续逐渐感受到一些简单的战术运用和枪法结合获得胜利的爽快感</strong>。在CS中，使用一些道具进行突破，猜测敌人的位置之类，获得胜利。尤其是残局五杀的时候，这样的爽快感最为强烈。是反应力与思考共同带来的。</p>
+</li>
+<li><p><strong>如今在Apex中感受到的爽快感是短时间内面对复杂的战场环境做出正确的决策最终获得胜利的成就感</strong>。考虑如何走位，如何利用地形，如何使用技能，最终战胜敌人，枪法已经并非决定性因素了，同段位枪法有高有低，但总不至于离谱。对于这种爽快感，思考的地位已经压过反应了。</p>
+</li>
+</ul>
+<p>Apex与CSGO作比较，就会发现体验的不同，“战术”的运用在CSGO中是比较进阶玩家的技巧，像是我这种道具只懂几个的玩家在官匹也能打到黄金二，对战中其实更趋于“背板”，干拉，搜索每个可能站敌人的点位，凭反应和枪法制胜的次数更多。而在Apex中，如果只顾着射击不注意身法，不注意自己的位置，很容易陷入危险的境地，玩家从刚接触游戏开始就必须注意更多的东西，并开始尝试思考，考虑掩体，考虑位置，做出决策。虽然最开始可能会做出很蠢的决策，但是随着自己游戏经历的提升，也能总结出一套下意识的反应：依托掩体，不要在空地上对枪，要占领高处……并在继续的游戏中面对各种各样的战斗情况（大逃杀的随机性）不断优化自己的决策，为决策添加更复杂的变量：如何使用技能之类。这是一个不断成长的过程，<strong>反应可能是很难提高的，但是这样的经验总结是可以飞跃的，让玩家感受到自己的明显的进步</strong>。在Apex中可以很明显地感受到<strong>射击难度的降低，TTK的加长</strong>，这也是为了给玩家留出<strong>反应的时间</strong>，缩回掩体后面仔细<strong>思考接下来的对策</strong>。</p>
+<h3 id="以MDA总结"><a href="#以MDA总结" class="headerlink" title="以MDA总结"></a>以MDA总结</h3><p><strong>机制——动态——美学</strong></p>
+<ul>
+<li><p>机制。前几篇文章中已经详细论述了一些地图、战斗或者资源刷新机制。这些机制的目的围绕着一点：促进战斗的发生。</p>
+</li>
+<li><p>动态。在随机的缩圈，随机的资源刷新的作用下，构成了一次次随机的战斗，玩家与玩家的战斗构成了对方游戏反馈的一部分。</p>
+</li>
+<li><p>美学。在复杂的战斗环境中，玩家短时间内收到大量信息，并必须做出反应与决策的紧张感与专注，并且最终通过正确的决策获得战斗胜利的成就感与胜利感。</p>
+</li>
+</ul>
+<h3 id="对大逃杀的未来猜测"><a href="#对大逃杀的未来猜测" class="headerlink" title="对大逃杀的未来猜测"></a>对大逃杀的未来猜测</h3><ul>
+<li><p>构成一种以单独房间为基本单位的，许多大小不一房间组成的大地图的大逃杀游戏。也可以设计一些不同功能不同规则的特殊房间。也就是重回迷宫的设计。</p>
+</li>
+<li><p>避免太过于宽阔的空间设计，防止远程战斗导致的枯燥化。</p>
+</li>
+<li><p>继续促进玩家之间发生战斗，如果是以房间为单位，其实可以动态连接两个房间，一旦判断到一支队伍装备达到一定程度，就自动将其房间连接到另一个有敌人的房间。还可如果两只队伍在一个房间内僵持过久，就自动将另一对的房间连接到这个房间，打破这样的僵局。</p>
+</li>
+<li><p>房间的随机排列与随机进入，缩圈破坏随机的房间，让单局体验更加随机化。</p>
+</li>
+</ul>
+<p>最终形成的是一个不断变化的迷宫，类似“异次元杀阵”？</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/14/FPS%E4%B8%8EACT%E4%BC%9A%E7%A2%B0%E6%92%9E%E5%87%BA%E6%80%8E%E6%A0%B7%E7%9A%84%E7%81%AB%E8%8A%B1%EF%BC%9F%E5%85%89%E6%98%8E%E8%AE%B0%E5%BF%86%EF%BC%9A%E6%97%A0%E9%99%90%E5%8A%A8%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AE%80%E8%AF%84/">
+                        <span class="hidden-mobile">FPS与ACT会碰撞出怎样的火花？光明记忆：无限动作系统简评</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

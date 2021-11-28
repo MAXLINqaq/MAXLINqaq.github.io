@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="仅仅是一些碎碎念而已。">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="仅仅是一些碎碎念而已。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于多人对战FPS的一点思考">
+<meta property="og:url" content="http://yoursite.com/2021/06/19/%E5%85%B3%E4%BA%8E%E5%A4%9A%E4%BA%BAFPS%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="仅仅是一些碎碎念而已。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fstatic.wanplus.com%2F2016%2F4%2F9%2F146019653500062.jpg&refer=http%3A%2F%2Fstatic.wanplus.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626691795&t=e71fffeb6894f3bbe8b331e3a56a2516">
+<meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage.9game.cn%2F2020%2F7%2F3%2F168543481.jpg&refer=http%3A%2F%2Fimage.9game.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626691747&t=e96ec757421a1263101fe6cc99d3946f">
+<meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic2.zhimg.com%2F50%2Fv2-fa780ae4f68a12ec7971ad58921e7168_hd.jpg&refer=http%3A%2F%2Fpic2.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626692026&t=78aa656cbffba7c0ea7ca3e51cc1e34a">
+<meta property="article:published_time" content="2021-06-19T03:21:01.000Z">
+<meta property="article:modified_time" content="2021-10-28T14:03:29.258Z">
+<meta property="article:author" content="MAXLIN">
+<meta property="article:tag" content="游戏分析">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fstatic.wanplus.com%2F2016%2F4%2F9%2F146019653500062.jpg&refer=http%3A%2F%2Fstatic.wanplus.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626691795&t=e71fffeb6894f3bbe8b331e3a56a2516">
+  
+  <title>关于多人对战FPS的一点思考 - 林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/valley.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="关于多人对战FPS的一点思考">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-06-19 11:21" pubdate>
+        2021年6月19日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">关于多人对战FPS的一点思考</h1>
+            
+            <div class="markdown-body">
+              <p>仅仅是一些碎碎念而已。</p>
+<span id="more"></span>
+
+<h3 id="一个主观的分类"><a href="#一个主观的分类" class="headerlink" title="一个主观的分类"></a>一个主观的分类</h3><p>（1）竞技场</p>
+<ul>
+<li><p>较小规模的地图</p>
+</li>
+<li><p>较少的对战人数</p>
+</li>
+<li><p>特定任务：爆破/推车/解救人质/消灭全部敌人</p>
+<p>代表：csgo，守望先锋……</p>
+</li>
+</ul>
+<p>（2）大逃杀</p>
+<ul>
+<li><p>大规模的地图</p>
+</li>
+<li><p>对战人数多，以小队为单位对抗</p>
+</li>
+<li><p>目标多变：游戏不给出路线，靠玩家自己形成习惯</p>
+<p>代表：Apex，PUBG……</p>
+</li>
+</ul>
+<p>（3）战场模拟</p>
+<ul>
+<li>大规模的地图</li>
+<li>对战人数多，分为双方对抗</li>
+<li>特定任务：爆破/占点/消灭全部敌人</li>
+</ul>
+<p>偏娱乐：战地系列</p>
+<p>偏硬核：战争附言，叛乱系列……</p>
+<h3 id="FPS的核心——射击"><a href="#FPS的核心——射击" class="headerlink" title="FPS的核心——射击"></a>FPS的核心——射击</h3><p>玩家在fps游戏里要做的就是用枪<strong>瞄准</strong>敌人，然后<strong>发射子弹</strong>。</p>
+<ul>
+<li><p>子弹的飞行时间</p>
+<p>在小地图内没有影响，但如果在大战场，朝远处射击时，如果没有飞行时间或者子弹下坠就会很不真实。</p>
+<p>在有飞行时间游戏里的狙击枪手感和没有子弹飞行时间游戏里狙击枪手感的差异。</p>
+</li>
+<li><p>准星与瞄准镜</p>
+</li>
+</ul>
+<p>准星式的瞄准一般不跟随后坐力改变，持续射击时最多有一个扩散的效果。</p>
+<p>瞄准镜，或者说是机瞄，就会跟随枪口的跳动而跳动。</p>
+<p>影响了玩家对自己子弹的感知。前一种通过子弹的落点，弹道的轨迹，后一种自然就是通过瞄准镜。</p>
+<p>前一种是间接的，后一种是直接的。</p>
+<p>对于复杂的弹道，许多时候子弹轨迹比较散，很难观察，然后操控。就需要练习掌握压枪的弹道，所谓练枪。在CS：GO中，甚至有些枪移动过程中弹道是完全散乱的，基本无法掌握。</p>
+<p>如果瞄准镜存在，就能通过瞄准镜准星的存在实时感受到子弹落点，并进行修正。在许多可以使用瞄准镜的游戏中，直接用准星瞄准变为了另一种说法：腰射，也就是不精准的代名词。这种情况下准星的大小也会比前一种情况大得多。当然，也存在特例，在APEX中EVA8作为一把自动霰弹枪，在腰射情况下连发的后坐力实际上是要比开镜时要小。</p>
+<h3 id="CSGO"><a href="#CSGO" class="headerlink" title="CSGO"></a>CSGO</h3><p>精髓在竞技模式。</p>
+<p>10V10的休闲人数过多，限制了战术的使用。</p>
+<p>5V5正好。对防守方来说，有两个点要防守。5个人只是堪堪够用，进攻路线有三条主路，以及一些小路。</p>
+<p>守方：警的基本策略就是铺开人员，看好主要的进攻口，然后等待进攻，确认敌人的主攻路线，进攻目的，合理调配人手进行防御。</p>
+<p>攻方：匪的基本策略就是集中部分人员，对某一条路开始突破，如果突破成功，则迅速进入点内下包，如果某一路失败，迅速换路。</p>
+<p>攻方是攻敌薄弱之处，受方是合理调配人员，及时支援。</p>
+<p>是比较明确的。这也是地图设计的厉害之处。CSGO的地图像是大浪淘沙，多年下来剩下的最经典的几张地图都是很优秀的。可以总结出来一些规律。</p>
+<p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fstatic.wanplus.com%2F2016%2F4%2F9%2F146019653500062.jpg&refer=http%3A%2F%2Fstatic.wanplus.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626691795&t=e71fffeb6894f3bbe8b331e3a56a2516" srcset="/img/loading.gif" lazyload alt></p>
+<p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage.9game.cn%2F2020%2F7%2F3%2F168543481.jpg&refer=http%3A%2F%2Fimage.9game.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626691747&t=e96ec757421a1263101fe6cc99d3946f" srcset="/img/loading.gif" lazyload alt></p>
+<p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic2.zhimg.com%2F50%2Fv2-fa780ae4f68a12ec7971ad58921e7168_hd.jpg&refer=http%3A%2F%2Fpic2.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626692026&t=78aa656cbffba7c0ea7ca3e51cc1e34a" srcset="/img/loading.gif" lazyload alt></p>
+<p>CSGO是在点里做了个图，彩虹六号是在图里做了个点。</p>
+<p>CSGO的AB点之间有一定的距离，敌人相互支援需要消耗一定时间。彩虹六号的两个点是贴在一起的，不存在调虎离山的说法。有的点也很不平衡，存在某方优势的情况。</p>
+<h4 id="经济系统"><a href="#经济系统" class="headerlink" title="经济系统"></a>经济系统</h4><p>值得详细分析。这里就简单提几句。</p>
+<p>1.有一种发育的感觉，攒钱买好装备。</p>
+<p>2.经济策略，不同的枪价格不同，需要合理分配金钱在道具，装备，枪械上。策略：ECO局。只起关键道具，省钱。</p>
+<p>3.关乎于平衡。燃烧弹对于守方的作用强于攻方的作用，在守方手里能够起到暂时阻挡一条进攻道路的作用，而在攻方手里起到的是一个驱赶的作用。因此，守方的燃烧弹比攻方贵150。</p>
+<h4 id="道具运用"><a href="#道具运用" class="headerlink" title="道具运用"></a>道具运用</h4><p>彩虹六号的一个玩点就是对场景造成改变。但是，在CSGO中，道具也能临时起到这种作用，燃烧弹，实际上就是临时升起一堵不能跨越的墙，烟雾弹，也是临时升起一堵墙。道具的运用是CSGO的一种进阶技巧，对于进攻或是防守的帮助都很大。一个人所能携带的道具数也是很大的，一火一烟二闪。将道具和彩虹六号不同干员的技能相比较，其实它们在定位上有一些类似之处，在某些时刻上创造有利于自己的条件。但是，干员的技能各不相同，有的技能可能更偏向于辅助，并对打破僵局没有什么帮助。或者在残局时，技能的使用次数已经消耗干净了。但在CSGO，玩家可以拾取死去敌人或者队友的道具，这也是一种补充。于是乎，彩虹六号战到最后，防守方往往会龟缩于点内进行防守，两个点已经被打通，实际上变成了一个点，而攻方没有任何办法将敌人引走，就演变成了一种存粹的比拼反应和枪法甚至是运气的游戏，与其说是战术的配合，不如说的个人英雄主义。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/26/Apex%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E4%B8%8B%E6%9C%80%E5%A5%BD%E7%9A%84%E5%A4%A7%E9%80%83%E6%9D%80%E6%B8%B8%E6%88%8F%EF%BC%9A%E6%95%B0%E5%80%BC%E7%AF%87/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Apex为什么是时下最好的大逃杀游戏：数值篇</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/28/%E5%85%B3%E4%BA%8E%E5%95%86%E5%93%81%E5%88%B6%E9%80%A0%E7%B1%BB%E7%BA%AA%E5%BD%95%E7%89%87%E7%9A%84%E6%80%9D%E8%80%83/">
+                        <span class="hidden-mobile">关于商品制造类纪录片的思考</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

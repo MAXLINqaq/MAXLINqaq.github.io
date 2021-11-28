@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="想说的，必须说的，再不说就没法说的东西">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="想说的，必须说的，再不说就没法说的东西">
+<meta property="og:type" content="website">
+<meta property="og:title" content="林某的个人博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="想说的，必须说的，再不说就没法说的东西">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="MAXLIN">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="An elegant Material-Design theme for Hexo">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/11/28/%E5%A4%A7%E9%80%83%E6%9D%80%E7%9A%84%E7%8E%B0%E5%9C%A8%E4%B8%8E%E6%9C%AA%E6%9D%A5%EF%BC%88%E6%80%BB%E7%BB%93%E7%AF%87%EF%BC%89/" target="_self">
+          大逃杀的现在与未来（总结篇）
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/11/28/%E5%A4%A7%E9%80%83%E6%9D%80%E7%9A%84%E7%8E%B0%E5%9C%A8%E4%B8%8E%E6%9C%AA%E6%9D%A5%EF%BC%88%E6%80%BB%E7%BB%93%E7%AF%87%EF%BC%89/" target="_self">
+          
+          
+            
+          
+          本文是前几篇Apex为什么是时下最好的大逃杀游戏的系列的总结篇。经过几周的沉淀，又有了新的灵感，统合前几篇文章中的观点，为本系列画上一个完美的句号。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-28 16:19" pubdate>
+              2021-11-28
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/11/14/FPS%E4%B8%8EACT%E4%BC%9A%E7%A2%B0%E6%92%9E%E5%87%BA%E6%80%8E%E6%A0%B7%E7%9A%84%E7%81%AB%E8%8A%B1%EF%BC%9F%E5%85%89%E6%98%8E%E8%AE%B0%E5%BF%86%EF%BC%9A%E6%97%A0%E9%99%90%E5%8A%A8%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AE%80%E8%AF%84/" target="_self">
+          FPS与ACT会碰撞出怎样的火花？光明记忆：无限动作系统简评
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/11/14/FPS%E4%B8%8EACT%E4%BC%9A%E7%A2%B0%E6%92%9E%E5%87%BA%E6%80%8E%E6%A0%B7%E7%9A%84%E7%81%AB%E8%8A%B1%EF%BC%9F%E5%85%89%E6%98%8E%E8%AE%B0%E5%BF%86%EF%BC%9A%E6%97%A0%E9%99%90%E5%8A%A8%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AE%80%E8%AF%84/" target="_self">
+          
+          
+            
+          
+          今天，11.12日，光明记忆:无限终于发售了，虽然也没有特殊的期待。经过两个小时的体验完成了整个流程，虽然存在一些bug，不过不是很影响游戏体验，整体上与光明记忆第一章相比已经有了长足的进步。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-14 19:11" pubdate>
+              2021-11-14
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/11/14/Apex%E6%96%B0%E8%B5%9B%E5%AD%A3%E5%9C%B0%E5%9B%BE%E5%88%86%E6%9E%90/" target="_self">
+          Apex新赛季地图分析
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/11/14/Apex%E6%96%B0%E8%B5%9B%E5%AD%A3%E5%9C%B0%E5%9B%BE%E5%88%86%E6%9E%90/" target="_self">
+          
+          
+            
+          
+          本文的分析的将基于前几篇中总结出的规律。对一些具体的设计进行分析，但是在更具体的比如说技能使用，CAR的手感上不会着墨过多，因为我也才刚接触新版本，是第一把用艾什开大还想着拿刀去劈敌人铸币。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-14 18:42" pubdate>
+              2021-11-14
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/30/%E4%B8%BA%E4%BB%80%E4%B9%88APEX%E6%98%AF%E6%97%B6%E4%B8%8B%E6%9C%80%E5%A5%BD%E7%9A%84FPS%E7%B1%BB%E5%A4%A7%E9%80%83%E6%9D%80%E6%B8%B8%E6%88%8F%EF%BC%9A%E5%85%B3%E5%8D%A1%E7%AF%87/" target="_self">
+          为什么APEX是时下最好的FPS类大逃杀游戏：关卡篇
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/10/30/%E4%B8%BA%E4%BB%80%E4%B9%88APEX%E6%98%AF%E6%97%B6%E4%B8%8B%E6%9C%80%E5%A5%BD%E7%9A%84FPS%E7%B1%BB%E5%A4%A7%E9%80%83%E6%9D%80%E6%B8%B8%E6%88%8F%EF%BC%9A%E5%85%B3%E5%8D%A1%E7%AF%87/" target="_self">
+          
+          
+            
+          
+          首先在开头先总结下上文的核心论点吧：装备成长体系赋予了玩家成长的目标，目标驱使玩家主动战斗，确定性更强的资源获取在促进成长的同时促进战斗的爆发，整体上加速这个过程。并由此塑造了Apex独特的游戏体验：单局游戏节奏快，战斗爽快刺激，不拖泥带水。上篇文章主要论述的是为什么单局游戏节奏快，因为战斗更容易发生：玩家战斗意愿强、锁敌难度低。而本篇文章，将会从关卡也就是地图方面，在地图的整体和局部上考察一些细
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-30 10:03" pubdate>
+              2021-10-30
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/26/%E6%88%98%E6%96%97%E9%80%9A%E8%A1%8C%E8%AF%81%E7%9A%84%E6%9E%84%E6%88%90%E4%B8%8E%E4%BD%9C%E7%94%A8/" target="_self">
+          战斗通行证的构成与作用
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/10/26/%E6%88%98%E6%96%97%E9%80%9A%E8%A1%8C%E8%AF%81%E7%9A%84%E6%9E%84%E6%88%90%E4%B8%8E%E4%BD%9C%E7%94%A8/" target="_self">
+          
+          
+            
+          
+          用“新星”形容战斗通行证这种付费模式可能不太恰当，或许也能用“如日中天”来形容，根据Gamerefinery的数据，在2018年6月到2021年2月间，在IOS商店畅销榜的前100款游戏中，有51款有使用了战斗通行证这种付费模式。这种发源于Dota2,兴盛于堡垒之夜的付费模式，在多个版本，多款游戏不断完善中，最终得以完善，广泛被运用于玩家熟悉的游戏之中，尤其是免费游戏中。虽然根据不同游戏的玩法，赛
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-26 20:07" pubdate>
+              2021-10-26
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/26/Apex%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E4%B8%8B%E6%9C%80%E5%A5%BD%E7%9A%84%E5%A4%A7%E9%80%83%E6%9D%80%E6%B8%B8%E6%88%8F%EF%BC%9A%E6%95%B0%E5%80%BC%E7%AF%87/" target="_self">
+          Apex为什么是时下最好的大逃杀游戏：数值篇
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/10/26/Apex%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E4%B8%8B%E6%9C%80%E5%A5%BD%E7%9A%84%E5%A4%A7%E9%80%83%E6%9D%80%E6%B8%B8%E6%88%8F%EF%BC%9A%E6%95%B0%E5%80%BC%E7%AF%87/" target="_self">
+          
+          
+            
+          
+          大逃杀的核心玩法正是在于[搜刮：跑毒：战斗]三者的循环，实际游戏中这三者并不会按照既定的顺序进行。也不会均匀地发生，在某些早期的大逃杀游戏中，譬如PUBG，能到前五的玩家的跑毒时间占总游戏时可能会超过一半以上。而大逃杀的核心体验在于战斗的体验，绝大部分的乐趣都来自于战斗，然后胜利，如果能一直胜利到最后吃鸡，将会带来最最强烈的正反馈。而对于搜刮和跑毒，其乐趣性确实不强，甚至可以说是有点无聊，但同样是
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-26 19:58" pubdate>
+              2021-10-26
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/06/19/%E5%85%B3%E4%BA%8E%E5%A4%9A%E4%BA%BAFPS%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/" target="_self">
+          关于多人对战FPS的一点思考
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/06/19/%E5%85%B3%E4%BA%8E%E5%A4%9A%E4%BA%BAFPS%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/" target="_self">
+          
+          
+            
+          
+          仅仅是一些碎碎念而已。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-06-19 11:21" pubdate>
+              2021-06-19
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/28/%E5%85%B3%E4%BA%8E%E5%95%86%E5%93%81%E5%88%B6%E9%80%A0%E7%B1%BB%E7%BA%AA%E5%BD%95%E7%89%87%E7%9A%84%E6%80%9D%E8%80%83/" target="_self">
+          关于商品制造类纪录片的思考
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/04/28/%E5%85%B3%E4%BA%8E%E5%95%86%E5%93%81%E5%88%B6%E9%80%A0%E7%B1%BB%E7%BA%AA%E5%BD%95%E7%89%87%E7%9A%84%E6%80%9D%E8%80%83/" target="_self">
+          
+          
+            
+          
+          ​        在视频平台上，有一种独特的纪录片吸引了我的注意——商品制造类的纪录片。这种纪录片不是官方出品的关于一些伟大工程或国之重器的宣传，也不关注于生产过程中工人具体的生存状态或是企业的现状。这样的”商品制造”类纪录片每集聚焦于一种或多种商品，为观众介绍其生产流程，一般以”流水线”,”第几步”的形式呈现给观众，就像一台粗劣的舞台剧，正在制造过程中的商品是绝对的主角，工厂则是舞台，但这并不是
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-28 22:23" pubdate>
+              2021-04-28
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/28/BettrBattleRoyale/" target="_self">
+          BettrBattleRoyale-更好的大逃杀游戏
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/03/28/BettrBattleRoyale/" target="_self">
+          
+          
+            
+          
+          从绝地求生到Apex——BetterBattleRoyale今天下午编辑的时候没保存，所以后半部分很简洁
+本文中的吃鸡游戏泛指那些以射击为主的大逃杀游戏
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-28 19:07" pubdate>
+              2021-03-28
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/12/24/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B2077%E5%88%B6%E9%80%A0%E7%B3%BB%E7%BB%9F%E7%AE%80%E6%9E%90/" target="_self">
+          赛博朋克2077制造系统简析
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/12/24/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B2077%E5%88%B6%E9%80%A0%E7%B3%BB%E7%BB%9F%E7%AE%80%E6%9E%90/" target="_self">
+          
+          
+            
+          
+          
+当第一次进入游戏后，发现能够“捡垃圾”，本来想要戏称其为“辐射77”，可深入体会进去，却发现制造系统浅薄，好像没做完似的，又或者可以说是有点精神分裂。以下就是一些关于《赛博朋克2077》制造系统的简要分析。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-24 19:54" pubdate>
+              2020-12-24
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
