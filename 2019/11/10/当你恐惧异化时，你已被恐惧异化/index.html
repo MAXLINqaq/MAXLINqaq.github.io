@@ -24,9 +24,9 @@
 <meta property="og:description" content="恐惧，一种无关于道德，存在于人性中最根本的感觉之中。恐惧是从前人们生存的必要感情，是趋利避害的原初动力。有了恐惧，人们会惧怕死亡，于是进行了“今亡亦死，举大计亦死；等死，死国可乎？”的价值判断，于是有了“王侯将相宁有种乎”的呼号。人们也会惧怕失去，失去原有的权利地位金钱幸福，俄国的沙皇恐惧资产阶级革命，而资产阶级又恐惧无产阶级的革命，由此观之，可以说恐惧是阶级斗争的感情源泉了。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-11-10T15:56:41.000Z">
-<meta property="article:modified_time" content="2019-11-16T16:22:09.485Z">
+<meta property="article:modified_time" content="2021-11-29T03:22:15.970Z">
 <meta property="article:author" content="MAXLIN">
-<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="杂文">
 <meta name="twitter:card" content="summary_large_image">
   
   <title>当你恐惧异化时，你已被恐惧异化 - 林某的个人博客</title>
@@ -78,7 +78,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>理想的乌有之乡</strong>
+      <strong>MAXLIN的小站</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -156,9 +156,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                友链
+              <a class="nav-link" href="/games/">
+                <i class="iconfont icon-google-fill"></i>
+                游戏
               </a>
             </li>
           
@@ -182,7 +182,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/valley.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -267,11 +267,18 @@
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+                    
+                  </div>
+                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a>
+                      <a class="hover-with-bg" href="/tags/%E6%9D%82%E6%96%87/">杂文</a>
                     
                   </div>
                 
@@ -369,6 +376,30 @@
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
 
@@ -427,6 +458,8 @@
 
 
 
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
 
 
 
@@ -444,6 +477,48 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
 
 
 

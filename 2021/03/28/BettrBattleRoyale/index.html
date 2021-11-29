@@ -28,9 +28,11 @@
 <meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fguides.gamepressure.com%2Fstatic%2Fmapy%2Fen%2Fgfx%2Fmap_2342.jpg&refer=http%3A%2F%2Fguides.gamepressure.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620716386&t=7aa1081915ba24df6051aa81112b9a8a">
 <meta property="og:image" content="http://a1.qpic.cn/psc?/V10xAVQ40dryVA/ruAMsa53pVQWN7FLK88i5kdIHsXIbbWY5RKkBp9E1Jm5f*h81c6bzseR8f1KFt3piK9ZUrMYefadxdu.urSVET7hs2NXiRMNgQyNZPntXuc!/c&ek=1&kp=1&pt=0&bo=9gPhA*YD4QMBKQ4!&tl=3&vuin=1203783169&tm=1618124400&sce=60-2-2&rf=0-0">
 <meta property="article:published_time" content="2021-03-28T11:07:00.000Z">
-<meta property="article:modified_time" content="2021-10-26T12:15:45.481Z">
+<meta property="article:modified_time" content="2021-11-29T03:29:45.061Z">
 <meta property="article:author" content="MAXLIN">
-<meta property="article:tag" content="游戏分析">
+<meta property="article:tag" content="大逃杀">
+<meta property="article:tag" content="FPS">
+<meta property="article:tag" content="Apex">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://i0.hdslb.com/bfs/article/1638f150b271a9c27597f0d8d4cb2c05eb273b08.jpg@758w_760h.webp">
   
@@ -83,7 +85,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>理想的乌有之乡</strong>
+      <strong>MAXLIN的小站</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -161,9 +163,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                友链
+              <a class="nav-link" href="/games/">
+                <i class="iconfont icon-google-fill"></i>
+                游戏
               </a>
             </li>
           
@@ -187,7 +189,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/valley.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -310,11 +312,22 @@
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+                    
+                  </div>
+                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+                      <a class="hover-with-bg" href="/tags/%E5%A4%A7%E9%80%83%E6%9D%80/">大逃杀</a>
+                    
+                      <a class="hover-with-bg" href="/tags/FPS/">FPS</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Apex/">Apex</a>
                     
                   </div>
                 
@@ -412,6 +425,30 @@
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
 
@@ -470,6 +507,8 @@
 
 
 
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
 
 
 
@@ -487,6 +526,48 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
 
 
 
