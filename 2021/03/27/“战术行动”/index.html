@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="想说的，必须说的，再不说就没法说的东西">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="这是我曾经写过的一份策划案，用来练习策划案写作和记录一些不太实际的点子。版本 v0.1 版本记录ver 0.1本文档为早期版本，主要介绍游戏的主要规则 简介《战术行动》是一款卡牌类策略游戏。它脱胎于上一个失败的策划“1+1&gt;2”的游戏彩虹六号|战术行动。那款游戏偏向于即时战略 RTT，不过操作的人数过多，致命的硬伤是操作不过来，因此，在那次失败的基础上，我大幅简化了游戏的操作，以及精简了游戏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="“战术行动”">
+<meta property="og:url" content="http://yoursite.com/2021/03/27/%E2%80%9C%E6%88%98%E6%9C%AF%E8%A1%8C%E5%8A%A8%E2%80%9D/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="这是我曾经写过的一份策划案，用来练习策划案写作和记录一些不太实际的点子。版本 v0.1 版本记录ver 0.1本文档为早期版本，主要介绍游戏的主要规则 简介《战术行动》是一款卡牌类策略游戏。它脱胎于上一个失败的策划“1+1&gt;2”的游戏彩虹六号|战术行动。那款游戏偏向于即时战略 RTT，不过操作的人数过多，致命的硬伤是操作不过来，因此，在那次失败的基础上，我大幅简化了游戏的操作，以及精简了游戏">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-27T15:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-17T07:02:28.353Z">
+<meta property="article:author" content="MAXLIN">
+<meta property="article:tag" content="即时战术">
+<meta property="article:tag" content="卡牌">
+<meta property="article:tag" content="电子桌游">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>“战术行动” - 林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>MAXLIN的小站</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/valley.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="“战术行动”">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-27 23:00" pubdate>
+        2021年3月27日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">“战术行动”</h1>
+            
+            <div class="markdown-body">
+              <p>这是我曾经写过的一份策划案，用来练习策划案写作和记录一些不太实际的点子。<br>版本 v0.1</p>
+<h1 id="版本记录"><a href="#版本记录" class="headerlink" title="版本记录"></a>版本记录</h1><h2 id="ver-0-1"><a href="#ver-0-1" class="headerlink" title="ver 0.1"></a>ver 0.1</h2><p>本文档为早期版本，主要介绍游戏的主要规则</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>《战术行动》是一款卡牌类策略游戏。它脱胎于上一个失败的策划“1+1&gt;2”的游戏彩虹六号|战术行动。那款游戏偏向于即时战略 RTT，不过操作的人数过多，致命的硬伤是操作不过来，因此，在那次失败的基础上，我大幅简化了游戏的操作，以及精简了游戏的机制，使其或许更具有可玩性。上一款游戏的设想，更多的是一个因彩虹六号：围攻而生的附属产品，过多地被束缚了思路，像是一个寄生在健硕器官上的肿瘤，最终成为一个四不像。而这款游戏，《战术行动》将要彻底抛弃彩虹六号的前缀，独立出来，彻底独树一帜。除却室内 CQB 这一反恐的背景，玩法已经彻底脱离了射击的模式，灵感更多地来自于《炉石传说》《KARDS》和最近接触的一些桌游。<br>核心机制 <strong>卡牌对战</strong>在第二点介绍，玩家具体操控在第四点介绍。</p>
+<h1 id="核心机制"><a href="#核心机制" class="headerlink" title="核心机制"></a>核心机制</h1><h2 id="对战规则"><a href="#对战规则" class="headerlink" title="对战规则"></a>对战规则</h2><p>《战术行动》采用的是线上 1V1 的对战模式，双方玩家在战前组成自己的牌组，分别扮演攻方和守方，在棋盘中用自己的卡牌进行对战。攻方的目标就是消灭所有守方的干员或者达成任务目标。受访的目标是消灭所有攻方的干员或者达成任务目标。游戏将一回合一回合地进行，直到某方干员全被消灭或者任务完成。</p>
+<h2 id="卡牌"><a href="#卡牌" class="headerlink" title="卡牌"></a>卡牌</h2><p>每个人可选择的可携带卡牌有数量上限， 一张指挥官牌，三张干员牌，十五张装备牌。指挥官牌提供某个初始的技能，干员牌提供参加对战的角色，有不同的基础数值影响它的行动条件和结果，装备牌可以给干员提供装备或者直接用处。<br>每个玩家初始拥有一张指挥官牌，三张干员牌，开局抽选五张装备牌，保存三张，剩下两张洗入牌库，之后每一局抽一张装备牌。除了玩家自己的牌组之外，双方各会获得一张任务牌，提供在歼灭敌人之外的另一种获胜条件。 </p>
+<h2 id="“费”与“息”"><a href="#“费”与“息”" class="headerlink" title="“费”与“息”"></a>“费”与“息”</h2><p>“费”在游戏中代表着一个行动或者装备使用的准备时间。“费”是一个时间的尺度，跟“息”一一对应。“息”取的是瞬息万变中的“息”的意思，因为室内 CQB 节奏很快，局面也是瞬息万变。“费”相当于花钱的价格，“息”相当于永恒的价值。“费”，玩家初始有三费，之后每回合不断增加一，直到十费，回合内没有用光的费可以继承到下一个回合使用，这样或许能为玩家提供更多的操作空间。而“息”从一开始就是十息。<br>玩家打出的卡牌和进行的行动是线性结算的，一条时间线上的总费不能超过十点，十息是一个上限。每一个行动都需要某个的干员来执行，可以有多条行动组同时执行，每条线同一时刻下执行行动的干员不能重复（毕竟一个人不能同时做两件事）。某些道具或技能可能推迟某个行动，当队列的某个行动结束时间在十息之后，这个行动将被自动跳过。玩家可以在十息内自由排列自己某个操作的顺序。</p>
+<h2 id="回合规则"><a href="#回合规则" class="headerlink" title="回合规则"></a>回合规则</h2><p>一个回合分成两个阶段，为战术阶段和结算阶段。</p>
+<h3 id="战术阶段"><a href="#战术阶段" class="headerlink" title="战术阶段"></a>战术阶段</h3><p>战术阶段中玩家打出卡牌或者是安排干员行动，完成行动时间线，双方的战术阶段是同步进行的，有一个时间上限，目前先定为 60s 吧，据说炉石是 75s，应该能够完成操作。</p>
+<h3 id="结算阶段"><a href="#结算阶段" class="headerlink" title="结算阶段"></a>结算阶段</h3><p>结算阶段中玩家双方的行动时间线同步结算，有些操作可能反制或延迟对方既定的操作，打乱对方的计划，所以说要多想几步对方的操作，可以延迟对方延迟你的操作。如果某行动因为对方的影响而结束时间大于十息，则该行动及后面的行动被跳过。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AD%96%E5%88%92%E6%A1%88/">策划案</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8D%B3%E6%97%B6%E6%88%98%E6%9C%AF/">即时战术</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8D%A1%E7%89%8C/">卡牌</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%94%B5%E5%AD%90%E6%A1%8C%E6%B8%B8/">电子桌游</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/03/28/%E6%B4%AA%E6%B0%B4/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">洪水</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/12/24/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B2077%E5%88%B6%E9%80%A0%E7%B3%BB%E7%BB%9F%E7%AE%80%E6%9E%90/">
+                        <span class="hidden-mobile">赛博朋克2077制造系统简析</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"095baed027b59c0db4c8","clientSecret":"e60faf26a918110416737e92fde6a27795419886","repo":"blogtalk","owner":"MAXLINqaq","admin":["MAXLINqaq"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'fc41c8ff6ae4158a0bd35081d252f07f'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://maxlinqaq.github.io/about/" target="_blank" rel="nofollow noopener"><span>I</span></a> <i class="iconfont icon-love"></i> <a href="https://maxlinqaq.github.io/404/" target="_blank" rel="nofollow noopener"><span>U</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
