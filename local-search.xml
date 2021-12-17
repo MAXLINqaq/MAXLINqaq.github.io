@@ -4,35 +4,6 @@
   
   
   <entry>
-    <title>Apex英雄游戏分析(总篇)</title>
-    <link href="/2021/12/17/Apex%E8%8B%B1%E9%9B%84%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90-%E6%80%BB%E7%AF%87/"/>
-    <url>/2021/12/17/Apex%E8%8B%B1%E9%9B%84%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90-%E6%80%BB%E7%AF%87/</url>
-    
-    <content type="html"><![CDATA[<p>在那么多篇对于Apex的分析之后，终于做了一个总结。本篇不再以Apex是时下最好的大逃杀游戏为噱头，而是比较实在地从单局玩法和一些FPS基础机制对Apex进行分析</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>游戏分析</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>大逃杀</tag>
-      
-      <tag>FPS</tag>
-      
-      <tag>Apex</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>大逃杀的现在与未来（总结篇）</title>
     <link href="/2021/11/28/%E5%A4%A7%E9%80%83%E6%9D%80%E7%9A%84%E7%8E%B0%E5%9C%A8%E4%B8%8E%E6%9C%AA%E6%9D%A5%EF%BC%88%E6%80%BB%E7%BB%93%E7%AF%87%EF%BC%89/"/>
     <url>/2021/11/28/%E5%A4%A7%E9%80%83%E6%9D%80%E7%9A%84%E7%8E%B0%E5%9C%A8%E4%B8%8E%E6%9C%AA%E6%9D%A5%EF%BC%88%E6%80%BB%E7%BB%93%E7%AF%87%EF%BC%89/</url>
