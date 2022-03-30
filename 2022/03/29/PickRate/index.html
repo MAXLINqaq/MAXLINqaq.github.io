@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="想说的，必须说的，再不说就没法说的东西">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="前言最近在写Apex的游戏分析和看彩六的更新日志，因为这两款游戏都存在“英雄”的设定，经常看到一些PickRate（以下统称为出场率）的数字。今天看到一个非常有迷惑性的图：Apex英雄的传奇出场率饼图，来自：apexlegendsstatus看到这个饼图，我就在想，欸，传奇选用率加起来咋就100%了？这不会是英雄出场数的占比吧？因为出场率是 $\frac{出现场次}{总场次} $，每个英雄的选用率">
+<meta property="og:type" content="article">
+<meta property="og:title" content="“PickRate”与“Presence”以及从此引出的一个简单数学模型">
+<meta property="og:url" content="http://yoursite.com/2022/03/29/PickRate/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="前言最近在写Apex的游戏分析和看彩六的更新日志，因为这两款游戏都存在“英雄”的设定，经常看到一些PickRate（以下统称为出场率）的数字。今天看到一个非常有迷惑性的图：Apex英雄的传奇出场率饼图，来自：apexlegendsstatus看到这个饼图，我就在想，欸，传奇选用率加起来咋就100%了？这不会是英雄出场数的占比吧？因为出场率是 $\frac{出现场次}{总场次} $，每个英雄的选用率">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img20220329185522.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img20220330102557.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img20220329193308.png">
+<meta property="article:published_time" content="2022-03-29T10:35:43.000Z">
+<meta property="article:modified_time" content="2022-03-30T04:32:36.542Z">
+<meta property="article:author" content="MAXLIN">
+<meta property="article:tag" content="Apex">
+<meta property="article:tag" content="R6S">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img20220329185522.png">
+  
+  <title>“PickRate”与“Presence”以及从此引出的一个简单数学模型 - 林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>MAXLIN的小站</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/valley.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="“PickRate”与“Presence”以及从此引出的一个简单数学模型">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-03-29 18:35" pubdate>
+        2022年3月29日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.9k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      9 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">“PickRate”与“Presence”以及从此引出的一个简单数学模型</h1>
+            
+            <div class="markdown-body">
+              <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>最近在写Apex的游戏分析和看彩六的更新日志，因为这两款游戏都存在“英雄”的设定，经常看到一些PickRate（以下统称为出场率）的数字。今天看到一个非常有迷惑性的图：<br><img src="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img20220329185522.png" srcset="/img/loading.gif" lazyload alt><br><em>Apex英雄的传奇出场率饼图，来自：<a href="apexlegendsstatus.com">apexlegendsstatus</a></em><br>看到这个饼图，我就在想，欸，传奇选用率加起来咋就100%了？这不会是英雄出场数的占比吧？<br>因为出场率是 $\frac{出现场次}{总场次} $，每个英雄的选用率相加是不可能100%的，因为 每个英雄的$\frac{出现场次}{总场次}+\frac{未出现场次}{总场次}$才会等于100%。<br>然后定眼一瞧，才发现加起来也不等于100%，下意识以位饼图的数据之和就是100%了。<br>（其实就应该是这样，感觉是制图的问题，或许是为了好看？）<br>在发现了这一点之后，顿时松了一口气，看来我对出场率的理解没出大问题。</p>
+<h5 id="PickRate-与-Presence"><a href="#PickRate-与-Presence" class="headerlink" title="PickRate 与 Presence"></a>PickRate 与 Presence</h5><p>由于彩虹六号：围攻在排位赛开始时有Ban干员的环节，因此在出场率的基础上引入了Presence的概念，指干员未被禁用时的出场率。<br>由于这种差异，就会导致彩虹六号整体的干员选用率与排位的干员选用率有一定差距。<br>根据r6tracker的数据如下图：<br><img src="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img20220330102557.png" srcset="/img/loading.gif" lazyload alt><br><em>部分进攻干员的出场率</em><br>以及官方公布的数据如下图：<br><img src="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img20220329193308.png" srcset="/img/loading.gif" lazyload alt><br><em>Y6S3白金段以上的干员出场率</em><br>Ash夸张的出场率已经飙到了80%以上，而且一半左右的干员在10%以下。<br>如果仅看整体，是不会发现有这种情况出现的。<br><strong>请注意：在进攻双方的英雄池分开时，选中率实际上是等同于出场率的。</strong><br><strong>但假如双方公用英雄池，或者有多方参与，这两者会存在一定关系，但不能等同</strong><br><strong>因为一场游戏中会有多个某英雄出场，我并不清楚业内在进行分析时是怎么看待这种差异的</strong><br><strong>但是在搜索数据时很明显第看到了不同的统计口径，虽然都标为PickRate，但是数值差异很大，似乎是将选用率和出场率混用了</strong></p>
+<h6 id="影响因素"><a href="#影响因素" class="headerlink" title="影响因素"></a>影响因素</h6><ul>
+<li>对局水平。由于干员的设计方向不同，在不同水平的对局下有玩家对于游戏理解的深浅不同也会有很不相同的表现。对于高段位玩家，大部分技能独特的干员其实不能参与到他们的战术中去，或者说不能替代战术中原本某个干员的角色，导致出场率很低。</li>
+<li>新干员的加入。在新干员加入游戏的一段时间内，他的出场率会偏高，因为大家都想尝试一下新角色，此外他的技能也会和之前的干员技能发生联动，使其出场率上升/下降。比如Mira的引入加大了对于只能近距离切墙的Thermite的威胁，导致当时其出场率下降了13%，而远距离切墙的Hibana的出场率则基本不变。（图片参见扒一扒彩六更新日志的2017/6/30条目）</li>
+<li>干员技能修改。很自然，玩家会追求一个角色能力的强度，如果比以前强自然会多选，如果是削弱，则可能不去再去选他。<h5 id="关于出场率的数学模型：衡量游戏的能效比"><a href="#关于出场率的数学模型：衡量游戏的能效比" class="headerlink" title="关于出场率的数学模型：衡量游戏的能效比"></a>关于出场率的数学模型：衡量游戏的<em>能效比</em></h5>之所以用能效比这个词来形容，能：是指耗能，引申为更新一个英雄的成本，效：是指效用。这个英雄在多大程度上在游戏中产生了作用，即可以以出场率代表。<br>毕竟英雄设计出来就是给玩家去玩的，如果这个英雄没人玩，没有参与到游戏中，不就白白浪费了。<br>设玩家可以选择的英雄总数为X，可选择的机会为Y，比如说一队5人，就有五次机会，假设每个英雄被选中的概率的均等的。（假设而已，现实不可能）<br>可以得理想出场率=$C_X^1*\frac{1}{Y} $<br>如果只有5个英雄和5个位置，那么每个英雄的理想出场率就是100%，看着还挺合理。<br>但是，我们可以从一些数据中发现，哪怕是最高的出场率，也要低于理想出场率。或许有两个原因：</li>
+<li>统计方式不同，数据有问题。有些网站并没有给出计算方式，其英雄胜率甚至也是全低于50%的，那么到底是谁赢了呢？我觉得数据的原因比较大，实际上需要细分取研究每个段位的表现。</li>
+<li>英雄的功能部分重叠，所以当一个英雄已经被选择后，另一个英雄出现的概率不是均等的，甚至是不会出现，实际中选择的顺序导致其出场率下降。</li>
+<li>彩虹六号的进攻干员池和防守干员池是分开的，才能如此计算。不然实际上计算得到的是选中率，如果双方干员池互通，或者像是Apex一样一局内有多只小队，队伍内的选中率和整体的理想出场率需要进行转换。</li>
+</ul>
+<p>使用公式$\sqrt{\sum(X-\mu)^2}$进行计算，将理想出场率带入$\mu$，X取为各个英雄的实际出场率，计算出能效比的值，这个值越大说明 能效比 越不理想。</p>
+<h6 id="彩虹六号该值的计算"><a href="#彩虹六号该值的计算" class="headerlink" title="彩虹六号该值的计算"></a>彩虹六号该值的计算</h6><p>彩虹六号每队有5个位置，进攻方有31个干员，防守方有32个干员得理想出场率为15.6%。<br>由于还有新进干员的存在，所以感觉这个理想出场率还是有些偏高。不过每个玩家并不会拥有全部的干员，所以这个值也会相对偏低。<br>以来自r6tracker的数据计算(数据不全，只有30个进攻干员)，得理想出场率为16.6%，用Excel进行计算，得该值为：0.74<br>以2018国际邀请赛的数据计算（进攻防守各18个），得理想出场率为27.7%，得该值为：0.844<br>以2021国际邀请赛的数据计算来源:<a target="_blank" rel="noopener" href="https://siege.gg/competitions/297-six-invitational-2021?tab=results#operator-presence">siege.gg</a><br>进攻防守各有29个干员，但是出场的都只有20个，以两种条件分别计算得理想出场率为17.2%，25%，计算该值分别为：0.771,0.75。</p>
+<h6 id="Apex该值的计算"><a href="#Apex该值的计算" class="headerlink" title="Apex该值的计算"></a>Apex该值的计算</h6><p>Apex每队有3个位置，共有20个传奇，理想出场率为15%。<br>PickRates数据来源：<a href="apexlegendsstatus.com/game-stats/legends-pick-rates">apexlegendsstatus</a>这个数据感觉像是出场率。<br>得该值为：0.427<br>这个值比较低，这或许是处于一场对局内有多只小队，如果从对局的角度出发，总计60个传奇，20个传奇每个出现3次，那么每个传奇的理想出场率就是5%？再次计算得该值为：0.193<br>两相对比，似乎在这种极端情况下第一种的数字也变得合理了起来。<br>不过如果每只小队中传奇的理想出场率为15%，那实际整个对局中也应该出现3个传奇。</p>
+<h6 id="Valorant该值的计算"><a href="#Valorant该值的计算" class="headerlink" title="Valorant该值的计算"></a>Valorant该值的计算</h6><p>Valorant每队有5个位置，目前有18个干员，理想出场率为27.7%，<br>感觉像是选用率的数据：<a target="_blank" rel="noopener" href="https://www.valorbuff.com/stats">valorbuff</a><br>得该值为：0.697<br>又由于双边都能选，一场对局中可能出现0.554个某干员，总共10个，那么理想出场率就是5.54%？。<br>感觉像是出场率的数据：<a target="_blank" rel="noopener" href="https://blitz.gg/valorant/stats/agents">blitz.gg</a>的数据，可以计算得该值为0.181，接近Apex在这种计算条件下的表现。</p>
+<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>通过能效比的计算我们能得到什么信息呢？</p>
+<ul>
+<li>某些干员的引入确实有效，分散了干员的功能，使比赛时候的能效比降低了。</li>
+<li>顶尖水平对局的能效比的确比全部对局更高，一部分干员的能力没法在这种对局中产生作用。</li>
+<li>在第一种计算方式下，Apex的能效比达到了令我惊讶的0.427，竟然还要低于Valorant的0.697，或许能说在英雄个性/平衡方面，Apex真的做得还不错。</li>
+<li>在第二种计算方式下，Apex的能效比和Valorant的能效比接近。不过都显著低于彩虹六号的。这或许也符合我们的直觉：彩六中“没用”的干员更多。</li>
+<li>不过，对比的前提是采用相同的计算方式和统计手法相当的游戏数据。有些游戏的数据获取起来比较困难，而根据玩家的统计数据，由于样本不同，计算方法的不同，也多有出入。</li>
+<li>总体而言，这个数值确实能够反应一定现象，但是在数据和计算方法统一之前，意义也不太大。</li>
+<li>应明确选中率和出场率的统计方法，是一样的，还是存在差别。</li>
+</ul>
+<p>由于我的水平有限，应该会出现不少错漏，烦请读者指正。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%B8%B8%E6%88%8F%E5%88%86%E6%9E%90/">游戏分析</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Apex/">Apex</a>
+                    
+                      <a class="hover-with-bg" href="/tags/R6S/">R6S</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/28/ReadRainbow6SigeDevLog/">
+                        <span class="hidden-mobile">扒一扒彩虹六号围攻的更新记录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"095baed027b59c0db4c8","clientSecret":"e60faf26a918110416737e92fde6a27795419886","repo":"blogtalk","owner":"MAXLINqaq","admin":["MAXLINqaq"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'b85ed5192fafc79be74bcf8f218b3f6a'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://maxlinqaq.github.io/about/" target="_blank" rel="nofollow noopener"><span>I</span></a> <i class="iconfont icon-love"></i> <a href="https://maxlinqaq.github.io/404/" target="_blank" rel="nofollow noopener"><span>U</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
