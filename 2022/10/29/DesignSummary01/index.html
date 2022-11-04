@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img202211022335661.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img202211022353810.png">
 <meta property="article:published_time" content="2022-10-29T05:12:07.000Z">
-<meta property="article:modified_time" content="2022-11-02T16:08:56.261Z">
+<meta property="article:modified_time" content="2022-11-04T03:09:09.248Z">
 <meta property="article:author" content="MAXLIN">
 <meta property="article:tag" content="游戏设计">
 <meta property="article:tag" content="平台跳跃">
@@ -282,8 +282,7 @@
 <span id="more"></span>
 <p>在一个线性的体验流程中，让玩家经历预设的体验是比较容易的，只需要在流程中的某些关键节点设定唯一的通关路径，就能要求玩家必须进行某些行为、使用某些能力才能通过关卡，这样一来，玩家的行为就是既定的，也就获得了比较一致的体验。</p>
 <p>但是，如果是非线性的体验流程呢？比如说在一张更大的地图中、箱庭、甚至是“开放世界”中，在这样更自由的情境下，<strong>如何让玩家经历预设的体验</strong>？</p>
-<p>###缘起与解决方案</p>
-<p>这就要从我最近参与的一个游戏说起了，本来是一个minigame项目，但是我们希望将其做成一个较大规模的游戏，譬如一个2D的开放世界动作冒险，这是最高的目标。而其出发点很简单，灵感来自于GMTK gamejam的<a href="[链接地址](https://mindcopgames.itch.io/level1-1)">Level1_1</a><br>，其本质就是在一张较大的地图中，通过不同的能力规划除多条不同的通关路线。</p>
+<h3 id="缘起与解决方案"><a href="#缘起与解决方案" class="headerlink" title="缘起与解决方案"></a>缘起与解决方案</h3><p>这就要从我最近参与的一个游戏说起了，本来是一个minigame项目，但是我们希望将其做成一个较大规模的游戏，譬如一个2D的开放世界动作冒险，这是最高的目标。而其出发点很简单，灵感来自于GMTK gamejam的<a href="[链接地址](https://mindcopgames.itch.io/level1-1)">Level1_1</a><br>，其本质就是在一张较大的地图中，通过不同的能力规划除多条不同的通关路线。</p>
 <p>但Level1-1的限制很强，每个能力时通关路径是唯一的，还利用了一些地形的变换，比如在攀爬能力时直接旋转地图的方向。</p>
 <p>我们希望给玩家带来更多自由，也不希望过大地改变地形(因为很不自然)，更希望带给玩家一种“获得新能力后，原来的机制会对新能力做出一些新的，但是同样符合直觉的反馈，并通过这种新反馈创造过关的新路径”的体验。</p>
 <p>详细一点的话，就是一个机制可能在游戏的一开始就出现了，但是受限于手上的能力，此时的机制并不能做出什么多样的反馈，只是按照原始的规则运行，当玩家获得新能力的时候，就会发现原来这个机制还能对这个能力进行新的反馈，之前的一些无法到达的路径也会被打通……</p>
