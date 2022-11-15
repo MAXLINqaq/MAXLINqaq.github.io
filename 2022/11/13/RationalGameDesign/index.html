@@ -24,7 +24,7 @@
 <meta property="og:description" content="理性设计就是消除不必要的信息，使事物本质上可读、可理解和明显，以有序且易于消化的方式引入机制，并保留游戏的学习和难度曲线。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-13T10:57:09.000Z">
-<meta property="article:modified_time" content="2022-11-14T08:56:06.603Z">
+<meta property="article:modified_time" content="2022-11-15T06:34:08.100Z">
 <meta property="article:author" content="MAXLIN">
 <meta property="article:tag" content="游戏设计">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      674 字
+      1.8k 字
     </span>
   
 
@@ -229,7 +229,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      5 分钟
     </span>
   
 
@@ -278,7 +278,7 @@
 <li>游戏机制(符合目标的一些玩法)</li>
 <li>技巧需求(通过这些机制需要何种技巧)</li>
 <li>期待的输入(面对这些技巧，期待玩家进行怎样的输入，决定难度)</li>
-<li>关卡原子组件(机制的组合形成了不同难度需求的关卡原子)</li>
+<li>原子参数(组成机制影响难度的重要参数)</li>
 <li>关卡设计模式/构成(根据对于关卡的预期选择关卡的原子组件构成关卡)</li>
 <li>标识/反馈(一些具体的润色的东西，提升玩家对于游戏的理解，顺滑地进入预期的体验)</li>
 </ul>
@@ -287,10 +287,111 @@
 <li>一个定义好的目标独立于游戏的形式。玩家一进游戏就该明白要做什么。</li>
 <li>一个定义好的目标不一定是具体的，或者说是不向玩家展现全部的细节。</li>
 <li>例子：目标：将一个球在不被拦截的情况下从A点移动到B点。<ul>
-<li>这句话给出了具体的物体(球)</li>
+<li>这句话给出了具体的物体(球)，目标(AtoB)，失败条件(被拦截)</li>
+<li>下一步要做的就是解释更多的细节：物体的更多信息(球如何运动？)，达成目标的更多信息(如何移动？如何携带物体？)，失败的更多信息(为什么被拦截？)<h2 id="机制"><a href="#机制" class="headerlink" title="机制"></a>机制</h2></li>
+</ul>
+</li>
+<li>与目标不同的是，游戏机制是一个非常具体的东西。具体的游戏机制有具体的难度区分。</li>
+<li>如果没有挑战，那就仅仅是一个<em>行为</em>。这并不一定是坏事，但一定非常需要去指明这一点。譬如说简单的移动，那没有什么挑战，就仅仅是一个<em>行为</em>，但当移动需要某些<strong>精确性</strong>时，挑战就产生了。</li>
+<li>所有的挑战都能被分为物理的、心理的、社交的。</li>
+<li>当设计机制时，一定要注意玩家的体验和玩家正在做的事之间的差异。</li>
+<li>设计师需要给团队里的其他成员一个明确的证据关于如此设计的目的。<h2 id="技巧需求"><a href="#技巧需求" class="headerlink" title="技巧需求"></a>技巧需求</h2></li>
+<li>明白需要玩家去做什么？需要他们因什么而成功/失败？</li>
+<li>拆分出挑战的本质。了解是玩家需要面对怎样的挑战。</li>
+<li>物理挑战：精度</li>
+<li>心理挑战：时机，反应，测量……</li>
+<li>社交挑战：<h2 id="期待输入"><a href="#期待输入" class="headerlink" title="期待输入"></a>期待输入</h2></li>
+<li>玩家需要字面上的做什么。按哪些按钮，以何种顺序……</li>
+<li>将输入作为设计的一个内容<ul>
+<li>“输入”的行为具有乐趣吗？</li>
+<li>在游戏情境中能有乐趣的潜力吗？</li>
+</ul>
+</li>
+<li>设计不好的输入会破坏沉浸感。好的输入让玩家注意力集中在目标上。<h2 id="原子参数"><a href="#原子参数" class="headerlink" title="原子参数"></a>原子参数</h2></li>
+<li>代表了不同难度的游戏机制。设计者可以通过调整顺序、种类适时调整难度。</li>
+<li>必须找到衡量每个参数的标准才能使其可用。这就是经验积累了。</li>
+<li>为每个游戏机制创建一个原子参数表格。<ul>
+<li>不要增加没有影响的原子参数</li>
+<li>多于6个的原子参数是不可用的 </li>
+</ul>
+</li>
+<li>对于原子参数和机制自信点。也就是别直接评价酷或者不酷，后续验证了才知道。<h2 id="关卡设计模式-构成"><a href="#关卡设计模式-构成" class="headerlink" title="关卡设计模式/构成"></a>关卡设计模式/构成</h2></li>
+<li>重复前五个步骤，构建RLD表格。思考玩家会在关卡中经历怎样的体验。</li>
+<li>重点<ul>
+<li>数学上看，复杂度的线性增加使难度指数型上升。考虑RLD表和实际中玩家的体验的联系</li>
+<li>RLD是一个出发点，但总有元素无法量化</li>
+<li>当参数失去作用，就让混乱来创造乐趣吧！</li>
+</ul>
+</li>
+<li>考虑各个方面，看看删除/增加某些部分是否会让游戏更好。 <h2 id="标记-amp-反馈"><a href="#标记-amp-反馈" class="headerlink" title="标记&amp;反馈"></a>标记&amp;反馈</h2></li>
+<li>为玩家提供标示和好的/坏的反馈循环</li>
+<li>玩家不需要手把手去交，但是需要明确的提示/规则。</li>
+<li>构建一个系统去奖励玩家在游戏中的投入</li>
+<li>构建一个系统告诉玩家为什么失败。以此为基础教授希望看到的行为。<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2></li>
+<li>目标：在不被拦截的情况下将一个球从A点移动到B点</li>
+<li>技巧：精准度，时机，测量</li>
+<li>期待输入:<ul>
+<li>手机屏幕上滑动<ul>
+<li>起始点，终止点</li>
+<li>速度</li>
+<li>距离</li>
 </ul>
 </li>
 </ul>
+</li>
+<li>原子参数：<ul>
+<li>操作窗口(时机)</li>
+<li>预测</li>
+<li>输入(角度，差别)容忍度</li>
+</ul>
+</li>
+<li>难度： 无，简单，中，难，超难</li>
+<li>RGD表格</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数/难度</th>
+<th>无难度</th>
+<th>低难度</th>
+<th>中难度</th>
+<th>高难度</th>
+<th>超高难度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>操作窗口</td>
+<td>随便</td>
+<td>10s</td>
+<td>5s</td>
+<td>2s</td>
+<td>0s</td>
+</tr>
+<tr>
+<td>预测</td>
+<td>不需要</td>
+<td>30s</td>
+<td>15s</td>
+<td>&lt;10s</td>
+<td>无</td>
+</tr>
+<tr>
+<td>角度容忍</td>
+<td>360°</td>
+<td>270°</td>
+<td>180°</td>
+<td>30°</td>
+<td>&lt;5°</td>
+</tr>
+<tr>
+<td>幅度偏差容忍</td>
+<td>随便</td>
+<td>随便</td>
+<td>完整扫过</td>
+<td>＜完整扫过</td>
+<td>＜四分之一扫</td>
+</tr>
+</tbody></table>
 
             </div>
             <hr>
@@ -328,8 +429,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/10/DesignSummary03/">
-                        <span class="hidden-mobile">构建吸血鬼幸存者like的数值系统[设计总结03]</span>
+                      <a href="/2022/10/29/DesignSummary01/">
+                        <span class="hidden-mobile">如何让玩家经历预设的体验？[设计总结01]</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
