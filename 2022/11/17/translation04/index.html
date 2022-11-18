@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="想说的，必须说的，再不说就没法说的东西">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="原文为Luke McMillan 2013年的一篇文章The Rational Design Handbook: An Intro to RLD.本文内容为我在机翻的基础上润色得出，难免错漏，也会在拿不准的地方给出原文。文中括号内的内容是我的补充。以下为正文。 一些最大的开发商采用了一种理性度量的方法来降低风险。这篇文章是一个系列中的第一篇，它研究了理性设计&#x2F;理性关卡设计中的一个特例。 理性关卡设">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【译介】理性设计手册：理性关卡设计导论">
+<meta property="og:url" content="http://yoursite.com/2022/11/17/translation04/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="原文为Luke McMillan 2013年的一篇文章The Rational Design Handbook: An Intro to RLD.本文内容为我在机翻的基础上润色得出，难免错漏，也会在拿不准的地方给出原文。文中括号内的内容是我的补充。以下为正文。 一些最大的开发商采用了一种理性度量的方法来降低风险。这篇文章是一个系列中的第一篇，它研究了理性设计&#x2F;理性关卡设计中的一个特例。 理性关卡设">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image.ibb.co/cEBSeQ/Figure01_zpscbd44ea8.jpg">
+<meta property="og:image" content="https://image.ibb.co/icVaYk/Figure02_zpse6c8465d.jpg">
+<meta property="og:image" content="https://image.ibb.co/fYGtKQ/Figure03a_zpsec28faa8.jpg">
+<meta property="og:image" content="https://image.ibb.co/icVaYk/Figure02_zpse6c8465d.jpg">
+<meta property="article:published_time" content="2022-11-17T13:55:48.000Z">
+<meta property="article:modified_time" content="2022-11-18T10:58:04.003Z">
+<meta property="article:author" content="MAXLIN">
+<meta property="article:tag" content="游戏设计">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://image.ibb.co/cEBSeQ/Figure01_zpscbd44ea8.jpg">
+  
+  <title>【译介】理性设计手册：理性关卡设计导论 - 林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>MAXLIN的小站</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/games/">
+                <i class="iconfont icon-google-fill"></i>
+                游戏
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/valley.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="【译介】理性设计手册：理性关卡设计导论">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-11-17 21:55" pubdate>
+        2022年11月17日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.7k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      8 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【译介】理性设计手册：理性关卡设计导论</h1>
+            
+            <div class="markdown-body">
+              <p><em>原文为Luke McMillan 2013年的一篇文章<a target="_blank" rel="noopener" href="https://www.gamedeveloper.com/design/the-rational-design-handbook-an-intro-to-rld">The Rational Design Handbook: An Intro to RLD</a>.<br>本文内容为我在机翻的基础上润色得出，难免错漏，也会在拿不准的地方给出原文。文中括号内的内容是我的补充。<br>以下为正文。</em></p>
+<p>一些最大的开发商采用了一种理性度量的方法来降低风险。这篇文章是一个系列中的第一篇，它研究了理性设计/理性关卡设计中的一个特例。</p>
+<h1 id="理性关卡设计导论"><a href="#理性关卡设计导论" class="headerlink" title="理性关卡设计导论"></a>理性关卡设计导论</h1><p>设计是一种高度个人化的东西，我完全承认这一点，而且曾见识过许多独特的方法。但一直以来设计实践中的神秘主义让我非常头疼，由于我过去从事音乐创造，在那个领域中规则和启发式(Heuristics)方法是“至高无上”的，所以我不太适应带点“禅意”(玄学)的设计方法的，尤其是这样随意设计(shoot from the hip,腰射，形容不精确，作者在这里附上了<a target="_blank" rel="noopener" href="https://lostgarden.home.blog/2005/04/04/design-testing-the-use-of-addiction-metrics-to-force-rapid-evolution-of-innovative-game-designs/">这篇</a>文章的链接，在博客上也有翻译)可能会带来经济风险。Dan Cook, Raph Koster, Joris Dormins, Steve Swink, Ernest Adams &amp; Jesse Schell (以及许多)这些作者们在将把游戏设计变成从炼金术变成科学的道路上走得很远。其中一种认识游戏的新方法就是<strong>理性设计</strong>或<strong>理性关卡设计</strong>[RLD]。我曾经写过一些关于这个概念的文章：<a target="_blank" rel="noopener" href="https://www.gamedeveloper.com/design/the-metrics-of-space-molecule-design">这篇</a>、<a target="_blank" rel="noopener" href="https://www.gamedeveloper.com/design/the-metrics-of-space-tactical-level-design">这篇</a>和<a target="_blank" rel="noopener" href="https://www.gamedeveloper.com/design/a-rational-approach-to-racing-game-track-design">这篇</a>。但我从没写过任何公开的从开始介绍理性关卡设计的文章。</p>
+<p>我原打算把这些写成一本共创的、免费的开源文章，叫做：“理性设计手册”。后来我改变了主意，决定把这本正在写作的手册变为一系列博客文章，放在Gamasutra(现在的gamedeveloper)上。这样一来，其他的游戏开发者、研究者就可以自由决定是否合著。所以就有了这篇文章：</p>
+<h1 id="什么是理性关卡设计"><a href="#什么是理性关卡设计" class="headerlink" title="什么是理性关卡设计"></a>什么是理性关卡设计</h1><p>理性关卡设计(下文简称为RLD)是一种客观量化玩家体验元素的方法，以创造一致的游戏体验。RLD最常被用来了解各种游戏元素对于难度的影响，因为合适的难度对于维持玩家体验处于焦虑和无聊之间至关重要(即心流状态)。我们可以使用RLD以客观的、量化的方法去设计玩家体验。虽然如今RLD已经不仅仅被用在关卡设计上了，但是RLD的这种说法被保留了下来用于描述这种数据导向的设计行为。</p>
+<h2 id="为什么要理性关卡设计"><a href="#为什么要理性关卡设计" class="headerlink" title="为什么要理性关卡设计"></a>为什么要理性关卡设计</h2><p>RLD最长被用在大型商业项目或有大量成员协作的项目中。尽管RLD的本质是依据一套客观的指标来打造用户体验，但他产业界的使用主要是为了降低风险。</p>
+<p>在RLD中，游戏元素的修改和创造是基于对于玩家数据的观察和通过数学方法创建关联。RLD的优点是通过量化生产过程将设计者联系起来，这在传统方法中常常被认为是太过抽象而不可表现的。</p>
+<p>RLD对于学生或者学习设计的人也是一个有用的工具。与“禅”倾向于经验和直觉而不是具体指标的设计方法相比，RLD提供了一个框架和过程可以有效降低设计的神秘感。许多采用RLD方法的设计师最终将这个概念整合到了他们自己的风格中，创造了一种“禅”和RLD的混合方法，出于经验，长于逻辑。</p>
+<h2 id="工具和前置知识"><a href="#工具和前置知识" class="headerlink" title="工具和前置知识"></a>工具和前置知识</h2><p>RLD所需的许多工具都是现成的，通常都是免费的，而且有很好的文档。尽管一些大厂已经开发了自己内部专有的工具，你也可以实现你自己的RLD管线。</p>
+<ul>
+<li>网格纸(对，你没看错，就是纸)</li>
+<li>直尺、笔、量角器、三角尺、计算器等</li>
+<li>某种电子表格<br>除了工具，对于数学的良好掌握也会很有帮助。</li>
+</ul>
+<h2 id="这篇文章和后续更新的目的"><a href="#这篇文章和后续更新的目的" class="headerlink" title="这篇文章和后续更新的目的"></a>这篇文章和后续更新的目的</h2><p>这篇文章（以及随后的文章）旨在为那些希望学习RLD方法的人提供资源。这个系列将包括一系列RLD的例子，以及是如何被应用于开发和分析的。请注意，这个系列只不过是游戏设计广泛的知识体系中的一部分。在整个系列中你将会看到其他来源的链接和参考。我强烈建议你花时间来阅读这些作者的作品(如果可能的话我也会继续翻译)。最重要的是，<strong>要承认设计的过程通常是因人而异的，你最终需要选择那些你最有共鸣的模型和结构。</strong></p>
+<h1 id="过程和“不性感”的玩意：如何定量分析难度？"><a href="#过程和“不性感”的玩意：如何定量分析难度？" class="headerlink" title="过程和“不性感”的玩意：如何定量分析难度？"></a>过程和“不性感”的玩意：如何定量分析难度？</h1><p>要明白如何在RLD中定量分析难度，需要面对这两个主要问题(虽然写的是2，但是有三条，lol)：</p>
+<ol>
+<li>从数学角度上讲，复杂度的线性增加往往会造成游戏难度的指数增加。以此为基础想一想你的RLD表格和最终游戏里玩家实际的心理活动的联系。</li>
+<li>RLD只是一个开始，设计中总有一些元素无法量化。</li>
+<li>当无法量化时，就考虑考虑混乱吧，来创造有趣的关卡体验。<h2 id="线性增加和指数难度-Linear-Increases-amp-Exponential-Difficulty"><a href="#线性增加和指数难度-Linear-Increases-amp-Exponential-Difficulty" class="headerlink" title="线性增加和指数难度(Linear Increases &amp; Exponential Difficulty)"></a>线性增加和指数难度(Linear Increases &amp; Exponential Difficulty)</h2>为了理解RLD方法中这些定量是数字是哪来的，需要仔细研究第一点：复杂度的线性增加会造成游戏难度的指数增加。其中关键的一点就是<strong>维度</strong>(dimensionality)。数学上来讲，维度是the number of spatial dimensions that we would need in order to enumerate every possible outcome of a set of modifiers。(简而言之，这里的维度就是独立参数的数目，也就是我们常理上理解的维度)</li>
+</ol>
+<p>举个例子，假如我们正在设计一个基于六面骰的游戏。这个骰子就是一个基础的组件。统计学上，可以认为这个骰子组成了一个由六个结果组成的概率空间，玩家掷出骰子后得到每个数字的可能性都是六分之一。这种事件只有一个维度，只需要一个轴就可以列举所有的可能性。虽然会有点无聊，但是我们可以得到这样的结果(如图1)：<br><img src="https://image.ibb.co/cEBSeQ/Figure01_zpscbd44ea8.jpg" srcset="/img/loading.gif" lazyload alt="图1"><br>如果我们把游戏扩展为有两个骰子，就需要用两个轴才能列举所有可能性。<br><img src="https://image.ibb.co/icVaYk/Figure02_zpse6c8465d.jpg" srcset="/img/loading.gif" lazyload alt="图2"><br>在两个骰子组成的事件中，我们可以看到一个轴是如何影响其他轴的——1+1=2等。我们还能发现在设计中每增加一个元素，就会成倍地增加玩家最终经历的潜在结。通过使用两个六面骰，我们已经将结果从六个增加到了三十六个。不仅如此，某些结果的概率也变得更复杂又去了，例如点数总和为2或12的概率都是三十六分之一，而点数总和为7的概率为六分之一。尽管组件数量的线性增加会导致可能性呈指数级增长，但人们在处理这种情况的能力超强。有种说法是这就是为什么我们能在识别模式中获得乐趣的原因之一(this is one of the reasons why we find such pleasure in identifying patterns)。<br><img src="https://image.ibb.co/fYGtKQ/Figure03a_zpsec28faa8.jpg" srcset="/img/loading.gif" lazyload alt="决策树"><br>我们可以构建出一棵决策树，每个节点拥有的孩子数量是玩家可做选择的数量。上图中我们可以看到三个选择时比两个选择时复杂得多的多。<br><img src="https://image.ibb.co/icVaYk/Figure02_zpse6c8465d.jpg" srcset="/img/loading.gif" lazyload alt="图3"><br>图3表明了了RLD的问题——每当我们在游戏中修改或增加一个元素，难度的增长就不是线性的，而是指数的，导致游戏难度过高。</p>
+<h2 id="开始量化RLD数值"><a href="#开始量化RLD数值" class="headerlink" title="开始量化RLD数值"></a>开始量化RLD数值</h2><h2 id="组件-modifier-和维度"><a href="#组件-modifier-和维度" class="headerlink" title="组件(modifier)和维度"></a>组件(modifier)和维度</h2>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AF%91%E4%BB%8B/">译介</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/">游戏设计</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"095baed027b59c0db4c8","clientSecret":"e60faf26a918110416737e92fde6a27795419886","repo":"blogtalk","owner":"MAXLINqaq","admin":["MAXLINqaq"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'c38bfae05782bb2814a7a4547a934e48'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://maxlinqaq.github.io/about/" target="_blank" rel="nofollow noopener"><span>I</span></a> <i class="iconfont icon-love"></i> <a href="https://maxlinqaq.github.io/404/" target="_blank" rel="nofollow noopener"><span>U</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
