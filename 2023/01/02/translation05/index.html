@@ -1,0 +1,581 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="想说的，必须说的，再不说就没法说的东西">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="原文为Sheri Graner Ray 2010年的一篇文章Tutorials: Learning To Play.本文内容为我在机翻的基础上润色得出，难免错漏，也会在拿不准的地方给出原文。文中括号内的内容是我的补充和想法。以下为正文。 为什么游戏教程总是如此辣鸡？它们是为谁准备的？经验丰富的开发者Sheri Graner Ray分析了掌握知识的不同方法并提出了一种设计新手教程的方法论，来满足更广">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【译介】教程：学习游玩">
+<meta property="og:url" content="http://yoursite.com/2023/01/02/translation05/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="原文为Sheri Graner Ray 2010年的一篇文章Tutorials: Learning To Play.本文内容为我在机翻的基础上润色得出，难免错漏，也会在拿不准的地方给出原文。文中括号内的内容是我的补充和想法。以下为正文。 为什么游戏教程总是如此辣鸡？它们是为谁准备的？经验丰富的开发者Sheri Graner Ray分析了掌握知识的不同方法并提出了一种设计新手教程的方法论，来满足更广">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-01T19:28:14.000Z">
+<meta property="article:modified_time" content="2023-01-03T12:18:10.010Z">
+<meta property="article:author" content="MAXLIN">
+<meta property="article:tag" content="游戏设计">
+<meta property="article:tag" content="新手教程">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>【译介】教程：学习游玩 - 林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>MAXLIN的小站</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/games/">
+                <i class="iconfont icon-google-fill"></i>
+                游戏
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/valley.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="【译介】教程：学习游玩">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-01-02 03:28" pubdate>
+        2023年1月2日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.2k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【译介】教程：学习游玩</h1>
+            
+            <div class="markdown-body">
+              <p><em>原文为Sheri Graner Ray 2010年的一篇文章<a target="_blank" rel="noopener" href="https://www.gamedeveloper.com/design/tutorials-learning-to-play">Tutorials: Learning To Play</a>.<br>本文内容为我在机翻的基础上润色得出，难免错漏，也会在拿不准的地方给出原文。文中括号内的内容是我的补充和想法。<br>以下为正文。</em></p>
+<p><em>为什么游戏教程总是如此辣鸡？它们是为谁准备的？经验丰富的开发者Sheri Graner Ray分析了掌握知识的不同方法并提出了一种设计新手教程的方法论，来满足更广阔的玩家受众。</em></p>
+<p>没人喜欢教程。</p>
+<p>营销人员不喜欢教程，因为它们直到项目最后的阶段才会被完成。</p>
+<p>制作人不喜欢教程，因为不想分散有限的资源去制作它们。（有时教程会交给实习生去做。下文中作者也提到了这一点，乐。）</p>
+<p>制作团队也不喜欢教程，因为他们已经在这个项目上投入了那么多，如此了解以至于无法想象为什么有人会玩不懂。</p>
+<p>最后，玩家们也不喜欢这些教程，因为它们在任何方面上都没有很好地教授任何东西。</p>
+<p>然而，教程是玩家与产品的第一次接触——决定玩家对于这个作品的第一印象。</p>
+<p>我们只有这一次机会，而且常常会将其搞砸。</p>
+<p>通常是这样的：在发售前的最后一刻，来自营销、公关或社区的同事提出：“教程怎么办？”</p>
+<p>团队在呻吟，制作人开始头疼，然后有些聪明人插进来说：“那个实习生还在吗？就是那个QA部门的，他不是懂编程吗？为什么不交给他做呢？哦！我们可以趁他还在的时候让他做一下。”</p>
+<p>这就是当今教程制作的方式。</p>
+<p>我们需要明白的是，教程不仅仅决定了玩家对我们作品的第一印象，还是进入的通道。如果这条道路是平滑、宽阔的，那么更多的人就可以轻松上路。反之，如果这是条狭窄、拥挤的泥泞小径，能成功通过的人就少了。更好的教程留下更好的第一印象，取悦玩家，提升业绩。</p>
+<p>那么如何去制作教程呢？首先，我们需要了解人们的学习方式。如果你接受过一些教育培训，你就会知道有三种主要的学习模式：视觉型、听觉型和动觉型。为了那些没了解过的读者，先简单介绍下：</p>
+<p><strong>视觉型学习者</strong>是那些通过看到的信息来学习的人。这些人更喜欢阅读说明书，或者看相关的图表，而非听讲。他们往往喜欢说：“我明白你的意思”这类话。</p>
+<p><strong>听觉型学习者</strong>是那些通过听到的信息来学习的人。他们宁愿听讲也不愿意读课本上的信息。他们经常说：“这听起来很对”之类的话。</p>
+<p><strong>动觉型学习者</strong>是那些希望在学习时处于运动状态的人。他们喜欢在白板前走来走去，而不是坐在桌子前。他们可能会说：“这感觉不对。”之类的话。</p>
+<p>重要的一点是动觉型学习者不一定是通过实践来学习的人，而是通过“移动”来学习的人。我有过一段和动觉型学习者共用一间办公室三年的经历。在我们进行设计头脑风暴时，他总是在白板前踱步，越是深入设计，他就越是移动，直到他真的在白板前蹦蹦跳跳。甚至他坐在电脑前时，也会移动他的手，就像在写字一样，指点、移动那些虚拟的点子。</p>
+<p>如今的教育者会告诉你，这些学习的模式有无数的组合，也有些新的模式，但上述三点仍然是最基本的。</p>
+<p>现在，你还没了解到的就是<em>获取知识的风格</em>（knowledge acquisition styles）。除了三大学习模式外，还有两大获取知识的风格，即“探索型学习”和“建模型学习”。这对游戏开发者很重要，因为可以直接应用于游戏教程的设计。</p>
+<p><strong>探索型学习</strong></p>
+<p>探索型学习的人喜欢通过冒险来学习的人。他们喜欢按下每一个按钮，拉动每一个拉杆，他们想找到风险并体验它们。</p>
+<p>这方面最好的例子是：当你把一个12岁的探索型学习者带进街机厅并递给她一个代币时，她往往会冲到第一台吸引她的街机前，塞入代币，然后开始敲打控制器并且开始问：“这是怎么玩的？”</p>
+<p>她正在通过探索学习——通过冒险学习。她会按下机器上的每个按钮，看看会发生什么。</p>
+<p><strong>建模型学习</strong></p>
+<p>建模型学习的玩家希望在尝试之前知道系统如何运作。他们需要在尝试之前了解风险和后果。因此，他们会在某些可以观察的事物或角色上模仿或者说模拟这个行为。看看正确和错误的反应，然后尝试去做，用对应的行为得到预期中的结果。</p>
+<p>在回到那个街机厅的例子，当第一个12岁的孩子在尝试敲打所有的按钮时，她的朋友，一个建模型学习者，会做什么呢？他很可能是在站着看，因为他想在试着玩之前弄清楚如何去玩。</p>
+<p>不幸的是，大部分街机的游戏循环并不是为了去“教”人如何玩，它们被设计成用大量灯光和快节奏的动作来吸引玩家。</p>
+<p>因此，这位建模型玩家很可能走过一台又一台街机，试图找到一个他能够弄明白的游戏，投入代币。最终，他很可能只会一毛不拔地离开街机厅。</p>
+<p>明白建模型玩家并不是担心学习这一点很重要，你可能常常会听人说“哦，我女朋友永远不会尝试去玩游戏，她担心机器。”或者“我爸爸就是不愿意碰我们给他买的新电脑，他担心它。”</p>
+<p>假设建模型玩家担心学习很危险，这会使开发者认为很难去做一些适合他们的设计。事实就是他们并不担心学习，仅仅是在被迫尝试探索型学习的方法之前，没有机会了解风险和后果。</p>
+<p>那么如何将其应用于教程呢？</p>
+<p>简单来说，如今绝大多数游戏都是为探索型学习者设计的教程。通常玩家会获得一个微不足道的机制解释（如果有的话），然后他们就会被扔到一个区域，并被告知：“随便走走、试试新东西。去探索吧！”</p>
+<p>但是对此建模型学习者会说：“但我这样做会发生什么？如果犯了错误，会有多糟糕？”因为探索型的方法对于他们来说并不舒服，于是就会关闭游戏。</p>
+<p>早期的某个版本的魔兽世界教程是为探索型学习者设计的教程的经典的例子。</p>
+<p>魔兽世界在发售最开始时并没有正式的教程，反之，它有一系列“帮助”按钮，当玩家遇到新的活动时，感叹号图标会出现在屏幕的底部，玩家只需要点击这些感叹号，就可以得到他们刚刚遭遇到的事物的帮助。听着还不错，不是吗？</p>
+<p>（现在这样的提示或许都会强制弹出，需要点击关闭，并且可以重复查看，这样至少能保证玩家齐码能扫过一眼。话又说回来，其他玩家也是MMO中帮助新人玩懂游戏很重要的一部分，如果服务器人口昌盛，很多问题其实可以玩家间自行解决，但是对于一个老式的几乎没有什么新玩家的MMO，古旧的教程设计、大量庞杂的系统，都是极大的入坑障碍。以我个人的经验，哪怕不是MMO，而是回坑一个更新许久的手游，一上来大量陌生的新系统都会让我头疼，最终重新开了个新号才顺滑多了。）</p>
+<p>如果玩家是一个探索型学习者，对他们而言是不错，但如果玩家是一个建模型的学习者就不是这么回事了。我玩了三天游戏，但从来没有点击过那些感叹号。事实上，是在我玩的时候有人看到了我屏幕底部有一整排感叹号后我才点的。他问：“你为什么不点那些玩意？”我说：“因为没人告诉我！”</p>
+<p>早期的魔兽教程就是这样一个典型的例子：它是为探索型学习者设计的，他们会点击所有东西，仅仅是为了看看有什么作用。然而，对于建模型学习者来说，在没有完全了解点击后会发生什么的情况下，点击某个东西的概念是一种明显的负面体验。</p>
+<p>因为从来没有人明确告诉我要点击这些图标，也没有给我机会看看点击后会发生什么，所以我就从来没有点击过，因此我完全没有这个学习的过程。我被期望以一种多我来说不自然、不舒服的方式来学习东西。</p>
+<p>我最近重新去看了看魔兽，发现暴雪做出了一些改变。图标不见了，取而代之的是弹出框，里面有文字和图形显示玩家需要为他们遇到的活动做些什么。这对于建模型学习者来说当然是更好的表现形式，但还不是很完美。</p>
+<p>请记住，建模型学习者想要模仿或以他们所看到的行为为榜样，他们还想充分了解他们所做事情的后果。这意味着他们经常想重复这个动作，直到他们适应这个动作，直到他们明白自己正在做什么。</p>
+<p>因此，对于建模型学习者的教程应该允许他们重复行动，知道他们认为自己准备好继续前进。如果我们只允许他们尝试一次，就会使他们感到仓促，甚至比他们在尝试前更不舒服。学习一个软件时越不舒服，他们就越不可能坚持下去，甚至根本不可能使用它。</p>
+<hr>
+<p>如果我们正在制作人们为了完成工作而必须学习的办公软件，用户就没有其他选择，只能学习它。他们可能会抵制学习，或者尝试其他方法去学，比如和朋友一起工作或者看有经验的人使用该软件。</p>
+<p>然而，玩家可以随意关闭我们的游戏。如果希望他们继续玩我们的游戏，乃至于成为死忠粉，就必须让玩家轻松舒适地去学习如何玩这个游戏。</p>
+<p>一个考虑到建模型玩家的教程会让玩家在学习游戏之前需要了解实际的软件和它的界面。否则建模型学习者就会去忙于学习这个“软件”如何操作，而非是这个“游戏”如何去游玩。</p>
+<p>试想一个人在学习侧方停车时同时学习如何启动、停止和转向。对于建模型学习者来说，他们正视图弄清需要做的事情的结果，同时学习侧方停车的技巧。（其实就是将基础操作的教学和这些基础操作能组合成的复杂功能分开，逐步引入）</p>
+<p>从设计的角度来看，先教界面再教玩法的想法可能会遭到开发者的反对，他们会说，过于直白地解释界面将会“打破第四面墙”，破坏“沉浸感”，虽然这是一个合理的担忧，但我相信玩家如果在学习玩游戏时不太自在，也不会有什么沉浸感的。</p>
+<p>简单来说，建模型玩家需要了解游戏如何运行的风险和后果，才会开始沉浸在游戏的故事或是设计之中。作为开发者，我们绝不应该为了“沉浸感”而愿意牺牲潜在的玩家。</p>
+<p>同时为建模型玩家和探索型玩家设计新手教程似乎有悖于常理。探索型玩家常常不喜欢建模型教程，认为它“沉闷”或“太慢”。他们可能会觉得这种沉浸感的缺乏或缓慢的进度不利于他们继续玩下去。与此同时，建模型玩家看一眼探索型教程就放弃了。有没有可能为这两种类型的玩家制作一个合适的教程呢？</p>
+<p>当然可以！诀窍就在于利用探索型学习者的天性。通过在每个教程页面或章节中添加一个简单的“跳过”按钮，探索型学习者不会被迫参与到建模型学习风格的教程中。同时，建模型学习者可以自由练习他们想要做的动作。此外，我们知道探索型学习者无论如何都会点击页面上的每一个按钮。</p>
+<p>（这让我想到了之前玩到的一个合成系统的教程，它是以任务的形式内嵌在主线中的，所以玩家一定不会错过，整个流程基本上就是手把手将合成的流程过一遍。因为教程文本是基于对话框的，所以可以很快地跳过。最终的结果就是对于建模型学习者来说不能多次尝试，对于探索型学习者来说也不能通过疯狂跳过的浏览来掌握操作方法。）</p>
+<p>总的来说，理解建模型学习者和探索型学习者之间的差异是为我们的游戏制作教程的关键。通过了解建模型学习者希望在使用软件之前了解时机的工作原理，我们可以增加他们对于产品的接受程度。</p>
+<p>与此同时，为探索型学习者提供快速、轻松地跳过建模型学习的部分，保证他们不会因为无聊而关闭游戏。通过了解这两种类型的学习者并为其提供便利，我们可以制作出更易于上手和更益于留存的游戏。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AF%91%E4%BB%8B/">译介</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/">游戏设计</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%96%B0%E6%89%8B%E6%95%99%E7%A8%8B/">新手教程</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/01/03/translation06/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【译介】关卡设计精益求精</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/12/10/AlyxDesignReverse/">
+                        <span class="hidden-mobile">AlyxDesignReverse</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"095baed027b59c0db4c8","clientSecret":"e60faf26a918110416737e92fde6a27795419886","repo":"blogtalk","owner":"MAXLINqaq","admin":["MAXLINqaq"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '200e8ba2144da36d9eb5472a195d2a30'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://maxlinqaq.github.io/about/" target="_blank" rel="nofollow noopener"><span>I</span></a> <i class="iconfont icon-love"></i> <a href="https://maxlinqaq.github.io/404/" target="_blank" rel="nofollow noopener"><span>U</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
