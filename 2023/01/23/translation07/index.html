@@ -1,0 +1,571 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="想说的，必须说的，再不说就没法说的东西">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="原文为Matt Allmer 2009年的一篇文章The 13 Basic Principles of Gameplay Design.本文内容为我在机翻的基础上润色得出，难免错漏，也会在拿不准的地方给出原文。文中括号内的内容是我的补充和想法。以下为正文。 游戏设计是混沌的，充满了挫折和矛盾。通常情况下，需求是提出一些能保证成功的设计。这种情况将方案引向既定的方向——也就是以前做过的被验证过的解决">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【译介】游戏设计的13个基本原则">
+<meta property="og:url" content="http://yoursite.com/2023/01/23/translation07/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="原文为Matt Allmer 2009年的一篇文章The 13 Basic Principles of Gameplay Design.本文内容为我在机翻的基础上润色得出，难免错漏，也会在拿不准的地方给出原文。文中括号内的内容是我的补充和想法。以下为正文。 游戏设计是混沌的，充满了挫折和矛盾。通常情况下，需求是提出一些能保证成功的设计。这种情况将方案引向既定的方向——也就是以前做过的被验证过的解决">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-23T13:05:35.000Z">
+<meta property="article:modified_time" content="2023-01-23T21:06:12.692Z">
+<meta property="article:author" content="MAXLIN">
+<meta property="article:tag" content="游戏设计">
+<meta property="article:tag" content="通用设计理论">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>【译介】游戏设计的13个基本原则 - 林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>MAXLIN的小站</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/games/">
+                <i class="iconfont icon-google-fill"></i>
+                游戏
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/valley.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="【译介】游戏设计的13个基本原则">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-01-23 21:05" pubdate>
+        2023年1月23日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.7k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      15 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【译介】游戏设计的13个基本原则</h1>
+            
+            <div class="markdown-body">
+              <p><em>原文为Matt Allmer 2009年的一篇文章<a target="_blank" rel="noopener" href="https://www.gamedeveloper.com/design/the-13-basic-principles-of-gameplay-design">The 13 Basic Principles of Gameplay Design</a>.<br>本文内容为我在机翻的基础上润色得出，难免错漏，也会在拿不准的地方给出原文。文中括号内的内容是我的补充和想法。<br>以下为正文。</em></p>
+<p>游戏设计是混沌的，充满了挫折和矛盾。通常情况下，需求是提出一些能保证成功的设计。这种情况将方案引向既定的方向——也就是以前做过的被验证过的解决方案。</p>
+<p>但与此同时，产品必须将自己与其他竞争者们区分开，或以某种方式脱颖而出。一下子就把设计者带入了困境。</p>
+<p>然后，无论是何种解决方案，都必须符合项目资源的限制。更不用说那些来自项目经理的项目排期压力和战略变化了。</p>
+<p>嗨诶！没有时间再分析之前段落了！我们还有主题要说呢！别在意你缺乏合适的工具！别再抱怨了！不是吗？</p>
+<p>游戏设计就像在航行时仍在建造船体，在从飞机上跳下时仍在缝降落伞，这就是游戏行业节奏的写照。一切并不会准备就绪（The horse is never put before the cart，马不会被放在马车前），而我们会比权量力，选择更好的方案。</p>
+<p>面对如此之多的紧迫、矛盾和不确定，其中哪里一定藏着固定的东西。你可以说我很闲，但我很喜欢做好准备、打好基础。这让我了解那些规则可以被打破，那些规则需要三思而后行。</p>
+<p>我在大学里选修了一门传统的动画课，第一天教授介绍了Frank Thomas &amp; Ollie Johnston提炼的<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/12_basic_principles_of_animation">“动画12原则”</a>。如果你不熟悉这两位，他们“是迪士尼九老”之二：迪士尼的传奇动画团队，负责那些经典的作品：白雪公主，101斑点狗，小鹿斑比，睡美人……</p>
+<p>起初，这12条原则很难完全掌握。然而，到了学期末，我注意到在作品中运用的原则越多，动画效果就越好。回想起这段经历，我对自己说：“靠，乔治！游戏设计中应该有类似的东西。”</p>
+<p>于是乔治和我开始在网上搜索。不幸的是最终希望还是落空了，我们找到了许多断断续续的理论、策略、方法和信条。它们有很多不同的主题：关于乐趣的理论，奖励玩家的选择，控制思维活动（controlling thought activity），心理多任务处理……以及呼吁“简化”（不管是什么意思，对于设计师来讲真是岂有此理！）。</p>
+<p>我还发现有一些原则，他们是如此显而易见，简直就是独眼龙看戏——一目了然：“了解你的受众”，“别破坏玩家的信任”，“给玩家选择”，“了解你自己”，“脑海中的两个机制不如引擎里的一个机制”（作者魔改自二鸟在林不如一鸟在手，但我觉得挺有意义的其实）。好吧，最后两条是我编的，没有一条能真正让我满意。（能写出很多正确的“废话”，这些东西无疑是对的，但是距离操作、距离方法论还有很长的一段距离，如何实践才是最难的。）</p>
+<p>我感到很困惑。这些我发现的东西没有一个能在日常的设计中起到帮助。因此，乔治，“独眼龙”和我决定把爱说谚语的毛病留在这团混乱中（而且要快！看在上帝的份上，在我做出更多比喻之前进入主题。）</p>
+<p>动画制作的12个基本原则是我的出发点，我保留了共同点，并根据我所知游戏设计不同的内容进行了补充。你会发现有些描述是相似的，有些甚至名字是相同的，但都适用于游戏设计。</p>
+<p>这些原则的目的是在你展示你的设计之前使你面面俱到。你可能在一开始就完全考虑某个原则，但这些原则可能在之后情况变化时引发思考。把这当成一张参考表吧。现在，让我们直入主题……</p>
+<h3 id="指导（Direction）"><a href="#指导（Direction）" class="headerlink" title="指导（Direction）"></a>指导（Direction）</h3><p>前三个原则与引领和指导玩家体验有关。游戏这种媒介在很大程度上是基于个人的、互动的发现，但它仍然是一种艺术媒介。</p>
+<p>别低估艺术指导的重要性，就像一幅画在引导眼睛，一本书在引导想象，一部电影在引导叙事，游戏也必须引导它的互动性。</p>
+<h4 id="1-焦点（Focal-Point）"><a href="#1-焦点（Focal-Point）" class="headerlink" title="1.焦点（Focal Point）"></a>1.焦点（Focal Point）</h4><p>永远不要让玩家猜测他们应该关注什么。同时允许次要的主题，但设计者的工作是在任何时候都提供一个明确的主要焦点。这适用于游戏的面子（看起来）和里子（玩起来）。</p>
+<p><em>关卡设计举例</em><br>创造清晰、明显的视线。<br><em>系统设计举例</em><br>在游戏进程和用户体验的过程中，清晰地定义节点和目标。</p>
+<h4 id="2-期待（Anticipation）"><a href="#2-期待（Anticipation）" class="headerlink" title="2.期待（Anticipation）"></a>2.期待（Anticipation）</h4><p>需要时间来通知玩家某些事情即将发生。在设计和实现事件和行为时，一定要考虑到“期待”的因素。</p>
+<p><em>关卡设计举例</em><br>在玩家看到火车之前，会先听到火车鸣笛。<br><em>系统设计举例</em><br>在闪电劈下来之前，会产生一圈充能的效果。</p>
+<h4 id="3-说明改变（Anticipation）"><a href="#3-说明改变（Anticipation）" class="headerlink" title="3.说明改变（Anticipation）"></a>3.说明改变（Anticipation）</h4><p>将所有的变化传达给玩家。这个简短的步骤发生在“期待”和事件本身之间。</p>
+<p>重点是要保持显著变化的层次结构。</p>
+<p>依据经验，可以根据稀有程度来设计。如果某个变化在一小时内发生了一百次，可能就不需要去说明它了。然而，如果该变化在整个游戏体验中只出现了五次，则可能需要一些视觉提示。</p>
+<p>这个原则是如此明显，有可能被视为理所当然，有时会被忽视。要勤于了解玩家在正确的时间和正确的事件上应该注意到哪些变化。</p>
+<p><em>关卡设计举例</em><br>当玩家角色登船后触发NPC解开缆绳的动画。<br><em>系统设计举例</em><br>当任务标准完成时，屏幕上会出现一个通知。（例如为农夫Bob杀死10个哥布林）</p>
+<h3 id="行为（Behavior）"><a href="#行为（Behavior）" class="headerlink" title="行为（Behavior）"></a>行为（Behavior）</h3><p>接下来的四项原则涉及到行为这个非常重要的部分。这涉及到玩家的期望，包括有意识的和无意识的。通常涉及到常见的设计理论，如玩家的选择、奖励和回报等等。这些原则也比较宽泛，所以它们可以应用于其他类型的设计，如用户界面和故事……</p>
+<h4 id="4-可信的事件和行为（Believable-Events-and-Behavior）"><a href="#4-可信的事件和行为（Believable-Events-and-Behavior）" class="headerlink" title="4.可信的事件和行为（Believable Events and Behavior）"></a>4.可信的事件和行为（Believable Events and Behavior）</h4><p>每个事件或行为都必须按照玩家的逻辑和期望发生。每一个动作、反应、结果、情感和传达都必须通过玩家潜意识测试并被其接受。</p>
+<p><em>关卡设计举例</em><br>将可破坏的物品放在爆炸物附近，这样一来爆炸看起来就会更可信。<br><em>系统设计举例</em><br>当优势转向玩家一方时，较弱的敌人就会逃跑。<br><em>UI举例</em><br>当玩家的角色将要死亡时，HUD元素会受到影响<br><em>故事举例</em><br>在玩家消灭恶龙之后，村民们的情绪更加高涨，反应积极。</p>
+<h4 id="5-饱和的事件和行为（Overlapping-Events-and-Behavior）"><a href="#5-饱和的事件和行为（Overlapping-Events-and-Behavior）" class="headerlink" title="5.饱和的事件和行为（Overlapping Events and Behavior）"></a>5.饱和的事件和行为（Overlapping Events and Behavior）</h4><p>如果一次只有一种变化，就会失去多样性。找到在任何特定时间点上发生事件的正确数量。</p>
+<p><em>关卡设计举例</em><br>为玩家提供从一系列结构中选择某物去建造的能力。<br><em>系统设计举例</em><br>边后卫指着同伴，防守端锋换位，四分卫指着并叫出橄榄球术语，观众们大声欢呼，因为这是第三次进攻。所有这些都发生在开球之前。<br><em>UI举例</em><br>点数累积在分数中，但每一次击杀都在屏幕上显示。<br><em>故事举例</em><br>叙事体验中有多个情节重心。例如：国王临终，但他的战争正在进行，他还没有宣布继承人——所有的都是在一个未知的破坏者策划的军事政变中发生的。</p>
+<h4 id="6-物理（Physics）"><a href="#6-物理（Physics）" class="headerlink" title="6.物理（Physics）"></a>6.物理（Physics）</h4><p>玩家的主要逻辑在物理学的已知可能性范围内运作。牢记重力、重量、质量、密度、力、浮力、弹性等等。以此为出发点，但不要受其限制。</p>
+<p><em>关卡设计举例</em><br>确保地板上的洞是符合目的的正确的尺寸。无论它是关卡进程中的一部分，还是仅仅为了视觉美感。<br><em>系统设计举例</em><br>当玩家的车辆刮到混凝土墙的侧面时，会出现火花粒子效果。<br><em>UI举例</em><br>GUI的主题参考了剪贴簿的元素。在这种情况下，动画过渡、高光等都遵循纸张的物理特性。</p>
+<h4 id="7-声音（Physics）"><a href="#7-声音（Physics）" class="headerlink" title="7.声音（Physics）"></a>7.声音（Physics）</h4><p>扪心自问，“当<strong>__</strong>时，它会发出什么声音？”“这个声音合适吗？”“这个声音是必要的吗？”“它是有利于体验还是阻碍体验？”如果玩家闭上眼睛，仅靠声音应该还能达到预期的效果。</p>
+<p>这个原则是否应该包括在内是有争议的，因为声音设计可以被认为是与游戏性设计分开的。我把它包含在内，是因为声音是至关重要的，很容易被忽视。它被考虑得越多，玩家的体验就越好。</p>
+<p><em>关卡设计举例</em><br>沼泽关卡中的苍蝇在靠近摄像机时发出声音。<br><em>系统设计举例</em><br>距离声效，声音效果的音量会根据资产的距离而变大变小。<br><em>UI举例</em><br>只有视觉上突出的图形才会附加音效，以免影响听觉体验。</p>
+<p>接下来的三个原则分别涉及到其他主要的设计内容。</p>
+<h3 id="进程（Progression）"><a href="#进程（Progression）" class="headerlink" title="进程（Progression）"></a>进程（Progression）</h3><h4 id="8-节奏（Pacing）"><a href="#8-节奏（Pacing）" class="headerlink" title="8.节奏（Pacing）"></a>8.节奏（Pacing）</h4><p>牢记所需的紧迫感、事件发生的速度、关卡所需的集中程度以及事件重复的频率。分散高度集中的时刻，混合紧迫感，并尽可能地改变事情以达到适当的效果。</p>
+<p><em>关卡设计举例</em><br>创建区域让玩家有着广阔的视野，而非让玩家感到幽闭恐惧的区域。（对于不那么需要紧张的区域而言，印象中的半衰期：艾利克斯的关卡安排基本上是室内加室外的循环。）<br><em>系统设计举例</em><br>创造长而有力的攻击与短而轻的攻击之间的对比。</p>
+<h3 id="环境（Environment）"><a href="#环境（Environment）" class="headerlink" title="环境（Environment）"></a>环境（Environment）</h3><h4 id="9-间隔（Spacing）"><a href="#9-间隔（Spacing）" class="headerlink" title="9.间隔（Spacing）"></a>9.间隔（Spacing）</h4><p>了解屏幕上和世界上有多少可用的空间，认识元素之间的空间关系，并考虑到修改这些空间的效果。<br><em>关卡设计举例</em><br>为空间放置适当数量的敌人，以便其正确移动。<br><em>系统设计举例</em><br>当AI角色移动通过一个瓶颈区域时，当人工智能角色不向前移动时将行走循环切换为空闲站立，以显示该角色正在 “等待 “移动通过狭窄的空间。</p>
+<h3 id="方法（Method）"><a href="#方法（Method）" class="headerlink" title="方法（Method）"></a>方法（Method）</h3><h4 id="10-线性设计VS组件拆解（Linear-Design-versus-Component-Breakdown）"><a href="#10-线性设计VS组件拆解（Linear-Design-versus-Component-Breakdown）" class="headerlink" title="10.线性设计VS组件拆解（Linear Design versus Component Breakdown）"></a>10.线性设计VS组件拆解（Linear Design versus Component Breakdown）</h4><p>线性设计包括在挑战到来时解决它们。所有的解决方案和可能性都具有相同的机构价值。这种方法可能会失去重点，但它提供了创造性和自发性的解决方案。</p>
+<p>组件拆解涉及到系统的分类和形成所有解决方案的逻辑层次。这种方法可能会限制创新，但能保持主要设计目标的清晰性。<br>（毫无疑问，在大型项目中基本上是不可能想到哪做到哪的，原神将元素柱一路从蒙德用到须弥，但将其与区域特色的一些机制进行了结合）</p>
+<p>这一原则并不意味着设计者必须选择其一。在开发过程中，有些时候一种方法比另一种方法更合适。</p>
+<p>例如，预研提供了足够的时间来分解事件的顺序。然而，当发行商在预研之后放弃了一个“必须”的改变时，线性设计可以迅速提供一个可接受的解决方案。</p>
+<p><em>关卡设计举例</em><br>在开发的早期阶段对关卡几何形状的白盒搭建，与调整同一关卡的一小块区域来实现一个后来才想到的想法。<br><em>系统设计举例</em><br>确定所有的主要系统（战斗、AI、输入等），并逐步填入不同层次的细节，而不是在最初的几个关卡中构思，并根据线性的玩家体验来提取可能的系统。</p>
+<h3 id="基石（Foundation）"><a href="#基石（Foundation）" class="headerlink" title="基石（Foundation）"></a>基石（Foundation）</h3><p>最后三个原则标志着游戏设计的基础，它们按重要性的倒序排列。对任何人来说都不奇怪。</p>
+<h4 id="11-玩家（Player）"><a href="#11-玩家（Player）" class="headerlink" title="11.玩家（Player）"></a>11.玩家（Player）</h4><p>玩家的因素是什么？玩家如何与所设计的一切互动？不仅仅是设备输入，还要解决玩家如何对体验做出贡献的问题。如果这是一个好主意，而且你能够正确地传达它，但玩家不喜欢它，那就改变它或取消它吧。<br>（如果玩家不喜欢，那么还是取消他吧。但其实是玩家能否正常理解它？之前在LD52的jam上对于UI做出了一些反人类的设计，可以参见我的那篇<a target="_blank" rel="noopener" href="https://maxlinqaq.github.io/2023/01/17/LD52Summary/">复盘</a>，但还是有人会喜欢哦）</p>
+<p><em>关卡设计举例</em><br>放置玩家希望让他们从座位上跳下来。<br><em>系统设计举例</em><br>安排进展，使玩家感到有能力、有决心、有焦虑，等等。</p>
+<h4 id="12-沟通（Communication）"><a href="#12-沟通（Communication）" class="headerlink" title="12.沟通（Communication）"></a>12.沟通（Communication）</h4><p>适当的团队成员是否正确认知了目标？适当的开发人员是否清楚该解决方案？如果这是个好主意，但你不能正确沟通，那和坏主意一样了，因为它很可能会被做烂。</p>
+<p><em>关卡设计举例</em><br>利用环境中的元素，使玩家被迫向正确的方向行驶。<br><em>系统设计举例</em><br>使用视觉提示，使玩家学会何时出拳而不是踢，跳而不是扫射……</p>
+<h4 id="13-宣讲（Appeal）"><a href="#13-宣讲（Appeal）" class="headerlink" title="13.宣讲（Appeal）"></a>13.宣讲（Appeal）</h4><p>在对任何人讲话时，问自己：”这能吸引受众吗？” 这包括（但不限于）玩家、观众、你的开发者伙伴、发行商和他们的营销团队。如果这不是一个好主意，就没有必要继续下去，直到它成为一个好主意或被更好的东西所取代。<br><em>关卡设计举例</em><br>在街上奔跑并不有趣，但在街上奔跑时被政府特工追捕会有趣。<br><em>系统设计举例</em><br>打拳可以很有趣，但当摄像机在撞击时摇晃，就更有趣了。</p>
+<h3 id="总结（Conclusion）"><a href="#总结（Conclusion）" class="headerlink" title="总结（Conclusion）"></a>总结（Conclusion）</h3><p>那么，就是这些了。这些原则明显地改善了我的设计，并迫使我从各个角度来考虑组件。我完全相信它们会让你在设计的竞争中有所优势。所以，为什么不试试呢？</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AF%91%E4%BB%8B/">译介</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/">游戏设计</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%80%9A%E7%94%A8%E8%AE%BE%E8%AE%A1%E7%90%86%E8%AE%BA/">通用设计理论</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/17/LD52Summary/">
+                        <span class="hidden-mobile">LudumDare52记录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"095baed027b59c0db4c8","clientSecret":"e60faf26a918110416737e92fde6a27795419886","repo":"blogtalk","owner":"MAXLINqaq","admin":["MAXLINqaq"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '17a086be2ab23fa833eb8afbe9299647'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://maxlinqaq.github.io/about/" target="_blank" rel="nofollow noopener"><span>I</span></a> <i class="iconfont icon-love"></i> <a href="https://maxlinqaq.github.io/404/" target="_blank" rel="nofollow noopener"><span>U</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
