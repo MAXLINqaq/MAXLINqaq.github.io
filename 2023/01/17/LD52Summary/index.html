@@ -23,12 +23,15 @@
 <meta property="og:site_name" content="林某的个人博客">
 <meta property="og:description" content="一月初的时候，和几个朋友一起参加了LD52，主题是Harvest，最终做了一个推箱子的解谜游戏。这里是我们的游戏也可点击我博客的Game分类直接玩到。以下是一些分析，总结和流水账 关于主题主题是Harvest，收获、收割，说实话给我的第一感觉是又好做又不好做，收获可以说是基本上是所有游戏中都出现过的一个要素，但有该如何将玩法与之结合，做出创新点？  第一印象是模拟经营&#x2F;生存建造。核心是收获-播种（">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img202301240721959.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img202301240725747.png">
 <meta property="article:published_time" content="2023-01-17T00:49:58.000Z">
-<meta property="article:modified_time" content="2023-01-23T13:04:32.128Z">
+<meta property="article:modified_time" content="2023-01-24T00:07:16.674Z">
 <meta property="article:author" content="MAXLIN">
 <meta property="article:tag" content="Gamejam">
 <meta property="article:tag" content="解谜">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img202301240721959.png">
   
   <title>LudumDare52记录 - 林某的个人博客</title>
 
@@ -221,7 +224,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.8k 字
+      5.1k 字
     </span>
   
 
@@ -230,7 +233,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6 分钟
+      16 分钟
     </span>
   
 
@@ -294,8 +297,24 @@
 </ul>
 <p>根据这样的思路，我们做出了一系列关卡。<br>对于狭窄的关卡，就利用箱子堵路无法自由通行来构建谜题。<br>对于宽阔的关卡，就利用一阵风能吹出6格远的特性来构建关卡。<br>最终，我们设计出了40个左右的关卡。但是没有进行更多的测试，不是所有关卡都应该被放在游戏中的。</p>
 <p>在完成十几个关卡之后，我就开始画美术素材了。没有专业美术的情况下只能勉强东拼西凑，结果到最后看评价最吸引人的不是关卡，而是游戏的整体氛围。良好的CRT滤镜和遮住关卡外围空地的毒气粒子效果构建了简单但还算不错的视觉效果。应该是性价比最高的一部分了。</p>
-<h3 id="评价"><a href="#评价" class="headerlink" title="评价"></a>评价</h3><p>参加本次jam的最大收获就能收获大量的评价，最开始的几天可能每隔1个小时就去刷新1次，看看有没有新评论。</p>
-<p>否决一个点子是没必要的，我开始认为没有不可用的玩法，只有不可用的设计。<br>只不过在短时间内可能解决不了某个问题。一个好点子和一个差点子的区别就在于好点子成为好的作品的路径可能更短暂、更清晰，最后的成品或许也会上限更高。但是差点子也能通过一些手段修复，突出优势，也不至于最后做出一个垃圾游戏。</p>
+<h3 id="评价"><a href="#评价" class="headerlink" title="评价"></a>评价</h3><p>参加本次jam的最大收获就能收获大量的评价，最开始的几天可能每隔1个小时就去刷新1次，看看有没有新评论。我将在以下罗列大部分评论：</p>
+<ol>
+<li>I like the art style, but the filters make it a bit hard to see what’s going on.<br>这是我们的第一条带有负面内容的反馈。我们的CRT滤镜让画面有点难看清了。在这次反馈之后，我们降低了滤镜效果，并将其设置为可被关闭。<br><img src="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img202301240721959.png" srcset="/img/loading.gif" lazyload alt><br>我们的游戏看起来大概是这样的。</li>
+<li>Figuring out it wanted me to click the “control buttons” on the screen was neat. Not sure how I feel about them, I like them I think even if my first instinct was to hate them.<br>这和我们的UI设计相关，希望带来的就是一种你坐在显示器前，看着几个实体的按钮，然后用这些按钮去操作显示屏里的画面的体验。<br><img src="https://cdn.jsdelivr.net/gh/MAXLINqaq/picgo/img202301240725747.png" srcset="/img/loading.gif" lazyload alt><br>可以注意到下方的实体按钮，他们的像素较高，而且也没有CRT滤镜覆盖，就像是在面前一样。或许会有点别扭，但也可能会让你爱上它们。在原本的设计中，我们希望在不同页面的同一个按钮从相同的位置伸出，但是迫于时间，这个功能被归为优先级低项了。虽然这个功能没什么意义，但是如果是在你的面前真的有这么一台机器，它的按钮大概是不会每次都改变位置的。</li>
+<li>Cool game.I like the green bubbles that use for mask. The game seems a bit slow when I want to play faster.<br>用于遮罩关卡外空余区域的毒云效果还不错，其实它的制作非常简单，粒子就一帧，由三种颜色组成，画了几分钟。通过粒子系统增加了缩放，再辅以CRT滤镜，效果还真不错。同时也提到了游戏节奏太慢了，的确，这个问题愈发显著。我们考虑过这个问题，为此加入了直接跳过到下一波风的按钮，但似乎还是太慢了。为了保证能操作到位，并节奏更快，似乎只能采取回合制了。执行完操作直接跳到下一波吹风。</li>
+<li>very unique and immersive. Not a huge fan of the sound design but that personal preference. Very creative entry!<br>提到了声音设计，事实上在这个游戏中我们没有布置bgm，而是使用了一个电流的底噪作为循环，加入了一些彩蛋的音效，比如枪声、冲水声、抽卡声……以不同的概率随机播放。目的是营造出一种生活感，在末日的堡垒里，通过机器人在外收集食物，但人总归是要吃饭的。音效本来是程序老哥之一，但是两位程序语言不太一样（Godot脚本和C#），就让另一位写了基本上所有代码，他就有很多时间做音效了，实际上他还写了短短的一段BGM，但是最后没有放进去，因为不知道该放哪。还有旁白，也算声音设计，采用了一种故意的AI配音，还加大了混响，为了营造glaDos的效果，最后还是有点突兀。采用配音也是因为偷懒了，不想做一个文字控制的系统，显示教程之类的……干脆直接插一段音频更方便，缺点是不好修改。在教程的配音之外，还添加了一些废土冷笑话，一部分冷笑话是AI生成的，随机播放……但是这个系统做的不好，会出现重复，过于吵闹的问题，在声音的问题被提出之后，我们削减了预设音效，反馈就好了一点。</li>
+<li>I liked most of the sound design but I feel like the static may have been too much after a little while of playing? Not sure if I missed an option to turn that off but it was a little off putting.<br>依旧是声音问题，过于重复，应该是bug，后续解决了。</li>
+<li>哈哈哈，仿佛听到GlaDOS的吐槽，就是音色有点叨耳朵，屏幕盯久了眼睛花🤣。解密挺有意思的，就是如果上面的指令方块一次性把周期给出来会不会要更accessible一点，不用等完一个周期再思考。 另外欢迎互评~😘<br>确实。指令方块即风向，本来是可以完全显示的，但是加了滤镜之后感觉看不清，于是就放大了，然后就没办法完全显示了，依旧是bug。本来也可以将其放在滤镜外，将其作为一个现实中的抬头显示器，这样效果可能会更好。还有就是配音过于刺耳，还是做得太粗糙了，如果不加混响，或许会好听一点。</li>
+<li>With that said, however, I did love hearing them there; and those types of things are often a treat for me when playing these types of games. Always a delight to hear what else the writers have to say!<br>这位喜欢在解密时听到一点东西，如果旁白的音效更加柔和，会好得多，看来他是会享受叙事的。虽然这是一个简单的解谜游戏，但我也希望在某些地方融入一些对于背景的介绍。</li>
+<li>Although I don’t think this game is made in three days. Because the game doesn’t match the theme very well<br>的确，这和收割又有什么关系呢？它其实根本就称不上是一个非常好的点子，或许是表现一种末日下的收割，一种无力感，只能通过手头的垃圾和自然的力量去收割？本质上还是Harvest的范围太广了，我也没能想到一个真的很绝的点子。有个打高尔夫然后地里能长出新的球的游戏让我记忆最深。但的确是三天做的，虽然很早就想做一个风吹东西，然后收集它的游戏了，也仅仅是个点子，为什么末日下的收获不能与此前有所不同呢？</li>
+<li>Wow, this is a very polished game! Unfortunately, it plays rather slowly, and the very small sprites make it hard to understand what’s happening on the screen, but I enjoyed the game. Anyway, great job!<br> 节奏的问题，除了音频和画面之外，节奏的问题被提的最多，最开始我其实没有太重视这个问题，因为过于兴奋了，导致没有好好玩过几个关卡，后来在试玩的过程中我不知不觉完成了整个大关，但还是注意到了一些过多的尝试，无意义的操作。</li>
+<li>I like the concept here, though I honestly there’s a bit of a disconnect between the idea that this is a reaper bot and your complete inability to do anything but stand in the way of tomatoes, heh.Not insurmountable, but as it is it doesn’t seem to mesh with the narratvie。<br>这点说到关键，为什么要用风去吹，而不是去推箱子。变成推箱子这个游戏会更坏吗？可能不会，虽然一些关卡可能就不成立了，毕竟也根据风吹的距离设计了一些关卡。但节奏上的问题肯定能被解决，<strong>玩家的每一步移动都是有意义的</strong>，至少能把箱子推来推去，而在这里，只能被动地等风来，你可能移动了很多，但如果错了一步，就得无谓地等上好几轮风。</li>
+</ol>
+<p>否决一个点子是没必要的，我开始认为没有不可用的玩法，只有不可用的设计。</p>
+<p>只不过在短时间内可能解决不了某个问题。一个好点子和一个差点子的区别就在于好点子成为好的作品的路径可能更短暂、更清晰，最后的成品或许也会上限更高。但是差点子也能通过一些手段修复，突出优势，也不至于最后做出一个垃圾游戏。</p>
+<p>整个过程中，我的心理大概经历了以下几个历程：制作时的兴奋，觉得牛逼；完成后看评论的忐忑；越看越觉得垃圾；到现在审视起来觉得也没那么垃圾，改一改大概还是有救的。</p>
+<p>如果抛去所有的包装，只留下最核心的玩法，对于某些关卡，我应该还是有兴趣去玩的。如果还有后续的开发，就得克服风与风之间的空洞时间，玩家的所做所为不是实时应验的，或许回合制会更加适合，但也更加脱节，但对于这个游戏来说操作的便利应该比带入要重要一点。</p>
+<p>不过，总而言之，在jam拿出这样一个作品，也算不错了。之前在jam也做出过很多在当时令自己兴奋的游戏，可是褪去热情的滤镜，根本就称不上好玩，我自己都不想玩的游戏，又怎么称得上及格呢？这次总算是做出了一个还算像样的玩意。</p>
 
             </div>
             <hr>
