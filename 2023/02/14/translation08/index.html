@@ -1,0 +1,569 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="想说的，必须说的，再不说就没法说的东西">
+  <meta name="author" content="MAXLIN">
+  <meta name="keywords" content="">
+  <meta name="description" content="原文为Patrick Traynor 的一篇文章Puzzle Level Idea Strategies.作者是Patrick的箱子无穷奇遇的设计者，带来了非常惊艳的谜题设计。本文内容为我在机翻的基础上润色得出，难免错漏，也会在拿不准的地方给出原文。文中括号内的内容是我的补充和想法。以下为正文。 简介这是一份为解谜游戏想出更多关卡的思路清单。创造性的练习，灵感的来源，以及看待游戏系统的不同方式。这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【译介】解谜关卡设计思路">
+<meta property="og:url" content="http://yoursite.com/2023/02/14/translation08/index.html">
+<meta property="og:site_name" content="林某的个人博客">
+<meta property="og:description" content="原文为Patrick Traynor 的一篇文章Puzzle Level Idea Strategies.作者是Patrick的箱子无穷奇遇的设计者，带来了非常惊艳的谜题设计。本文内容为我在机翻的基础上润色得出，难免错漏，也会在拿不准的地方给出原文。文中括号内的内容是我的补充和想法。以下为正文。 简介这是一份为解谜游戏想出更多关卡的思路清单。创造性的练习，灵感的来源，以及看待游戏系统的不同方式。这">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cwpat.me/misc/puzzle-level-idea-strategies/images/linelight_spreadsheet.webp">
+<meta property="og:image" content="https://cwpat.me/misc/puzzle-level-idea-strategies/images/parabox_no_north_walls.webp">
+<meta property="og:image" content="https://cwpat.me/misc/puzzle-level-idea-strategies/images/witness_deduction_puzzle.webp">
+<meta property="og:image" content="https://cwpat.me/misc/puzzle-level-idea-strategies/images/jelly_pin_tumbler.webp">
+<meta property="og:image" content="https://cwpat.me/misc/puzzle-level-idea-strategies/images/parabox_rescue_sequence.webp">
+<meta property="og:image" content="https://cwpat.me/misc/puzzle-level-idea-strategies/images/microban.webp">
+<meta property="og:image" content="https://cwpat.me/misc/puzzle-level-idea-strategies/images/microban.webp">
+<meta property="article:published_time" content="2023-02-14T03:05:45.000Z">
+<meta property="article:modified_time" content="2023-02-15T10:46:10.662Z">
+<meta property="article:author" content="MAXLIN">
+<meta property="article:tag" content="游戏设计">
+<meta property="article:tag" content="解谜">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cwpat.me/misc/puzzle-level-idea-strategies/images/linelight_spreadsheet.webp">
+  
+  <title>【译介】解谜关卡设计思路 - 林某的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>MAXLIN的小站</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/games/">
+                <i class="iconfont icon-google-fill"></i>
+                游戏
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/valley.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="【译介】解谜关卡设计思路">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-02-14 11:05" pubdate>
+        2023年2月14日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.2k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【译介】解谜关卡设计思路</h1>
+            
+            <div class="markdown-body">
+              <p><em>原文为Patrick Traynor 的一篇文章<a target="_blank" rel="noopener" href="https://cwpat.me/misc/puzzle-level-idea-strategies/">Puzzle Level Idea Strategies</a>.<br>作者是Patrick的箱子无穷奇遇的设计者，带来了非常惊艳的谜题设计。<br>本文内容为我在机翻的基础上润色得出，难免错漏，也会在拿不准的地方给出原文。文中括号内的内容是我的补充和想法。<br>以下为正文。</em></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>这是一份为解谜游戏想出更多关卡的思路清单。创造性的练习，灵感的来源，以及看待游戏系统的不同方式。这些策略中有许多在不同时期帮助过我；我认为它们是我工具箱中的有用工具。随着时间的推移，我收集了这些方法。我想，把这些方法分享出来可能会对其他人有所帮助。</p>
+<p>感谢那些为这份清单做出贡献的人：Brett Taylor, clementsparrow, clickmazes, Corey Martin, Elyot Grant, Ethan Clark, icely, jackk, Joel Fox, Joseph Mansfield, knexator, Le Slo, marcosd, pancelor, ReflectivistFox, Toombler.</p>
+<h2 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h2><h3 id="找到一种交互方式，并要求必须这么做"><a href="#找到一种交互方式，并要求必须这么做" class="headerlink" title="找到一种交互方式，并要求必须这么做"></a>找到一种交互方式，并要求必须这么做</h3><p>围绕着解谜所需的特定互动或动作来构建一个谜题。就我个人而言，我非常频繁地使用这种方法。</p>
+<h3 id="混合机制"><a href="#混合机制" class="headerlink" title="混合机制"></a>混合机制</h3><p>思考练习：假设所有机制都被邀请参加一个聚会。当机制A遇到机制B时会发生什么？他们会发生什么交流？机制C也会对这种交流感兴趣吗？:)</p>
+<h3 id="列举所有机制对"><a href="#列举所有机制对" class="headerlink" title="列举所有机制对"></a>列举所有机制对</h3><p>列出所有的机制对（定义以下机制），对每个机制对进行头脑风暴。<br><img src="https://cwpat.me/misc/puzzle-level-idea-strategies/images/linelight_spreadsheet.webp" srcset="/img/loading.gif" lazyload alt="机制表"></p>
+<h3 id="列举行动序列"><a href="#列举行动序列" class="headerlink" title="列举行动序列"></a>列举行动序列</h3><p>列出你的游戏所具有的行动（定义一下“行动”），然后列出这些行动的序列，并尝试以这些序列作为解决方案来制作关卡。例如，如果你的行动是A、B和C，试着制作一个迫使你先做A再做B的关卡，另一个关卡是先做B再做A，另一个是AAB、ABA、ABB，等等。</p>
+<h3 id="尝试极端情况"><a href="#尝试极端情况" class="headerlink" title="尝试极端情况"></a>尝试极端情况</h3><p>极端布局可以很有趣，有时可以有一套全新的演绎和定理。例如，几乎所有的空间都是板条箱，几乎所有的空间都是玩家，等等。</p>
+<h3 id="尝试有趣的几何图形"><a href="#尝试有趣的几何图形" class="headerlink" title="尝试有趣的几何图形"></a>尝试有趣的几何图形</h3><p>尝试有趣的几何图形，例如只有2个单元格宽的关卡，对称的关卡，真正的大关卡，没有墙的关卡等等。<br><img src="https://cwpat.me/misc/puzzle-level-idea-strategies/images/parabox_no_north_walls.webp" srcset="/img/loading.gif" lazyload alt="Patrick&#39;s Parabox中的一道谜题，没有南墙。"></p>
+<h3 id="在一个大场地上上随便搞搞"><a href="#在一个大场地上上随便搞搞" class="headerlink" title="在一个大场地上上随便搞搞"></a>在一个大场地上上随便搞搞</h3><p>做一个有着很多物体和结构的关卡，随便搞搞看看你能在里面做什么。</p>
+<h3 id="在编辑器里随便放点东西"><a href="#在编辑器里随便放点东西" class="headerlink" title="在编辑器里随便放点东西"></a>在编辑器里随便放点东西</h3><p>在编辑器中涂抹随机的、混乱的、不正常的和愚蠢的结构，可以激发出你在其他方面不会想到的想法。这比听起来更有用!</p>
+<h3 id="创造一个不可能的关卡，然后使其成为可能"><a href="#创造一个不可能的关卡，然后使其成为可能" class="headerlink" title="创造一个不可能的关卡，然后使其成为可能"></a>创造一个不可能的关卡，然后使其成为可能</h3><p>创造一个明显不可能解决的关卡。然后，以这个为起点，不断进行调整，使之成为可能，看看你最终的结果如何。或者，想出一个漏洞来解决一个自相矛盾的情况，然后掩盖这个漏洞。</p>
+<h3 id="创造一个不可能的关卡，然后无论如何都要尝试解决它"><a href="#创造一个不可能的关卡，然后无论如何都要尝试解决它" class="headerlink" title="创造一个不可能的关卡，然后无论如何都要尝试解决它"></a>创造一个不可能的关卡，然后无论如何都要尝试解决它</h3><p>创建一个明显无法解决的关卡。现在，无论如何要试着解决它。</p>
+<h3 id="创造一个可能的水平，然后让它变得不可能"><a href="#创造一个可能的水平，然后让它变得不可能" class="headerlink" title="创造一个可能的水平，然后让它变得不可能"></a>创造一个可能的水平，然后让它变得不可能</h3><p>从一个有可能解决的关卡开始，不断进行修改，直到不可能解决为止，然后撤销你最后的修改。</p>
+<h3 id="教授你希望玩家学习的东西"><a href="#教授你希望玩家学习的东西" class="headerlink" title="教授你希望玩家学习的东西"></a>教授你希望玩家学习的东西</h3><p>找到你想让玩家学习的东西，比如一个特定的规则、极端案例或技巧，然后制作一个教它的关卡。</p>
+<h3 id="找到一个有趣的推论，并使其成为必须"><a href="#找到一个有趣的推论，并使其成为必须" class="headerlink" title="找到一个有趣的推论，并使其成为必须"></a>找到一个有趣的推论，并使其成为必须</h3><p>在一个特定的设置中找到一个有趣的推理，并试图围绕这个推理建立一个谜题，使之成为关键。</p>
+<h3 id="做一个正向的设计链"><a href="#做一个正向的设计链" class="headerlink" title="做一个正向的设计链"></a>做一个正向的设计链</h3><p>遵循 “正向设计 “的方法：从一块白板开始，放置物体以创造一个推理序列，这样，玩家也会遵循完全相同的推理序列。<br><img src="https://cwpat.me/misc/puzzle-level-idea-strategies/images/witness_deduction_puzzle.webp" srcset="/img/loading.gif" lazyload alt="见证者中的一个谜题，有一系列的推论要做。"></p>
+<h3 id="做一个具有不变性的设置"><a href="#做一个具有不变性的设置" class="headerlink" title="做一个具有不变性的设置"></a>做一个具有不变性的设置</h3><p>建立一个具有某种不变量的设置，例如几何不变量、拓扑不变量、排序不变量，并围绕它建立一个谜题。</p>
+<h3 id="诱导出现的现象和模式"><a href="#诱导出现的现象和模式" class="headerlink" title="诱导出现的现象和模式"></a>诱导出现的现象和模式</h3><p>看看你是否能诱发或发现突发现象或模式，如奇偶性、循环、行动的可逆性、行动的等价性，等等。</p>
+<h3 id="实施小工具"><a href="#实施小工具" class="headerlink" title="实施小工具"></a>实施小工具</h3><p>看看你是否能利用游戏中的物体实现一些小工具和机制，如单向隧道、一次性隧道、15字谜、二进制计数器、密码锁等。<br><img src="https://cwpat.me/misc/puzzle-level-idea-strategies/images/jelly_pin_tumbler.webp" srcset="/img/loading.gif" lazyload alt="Jelly is Sticky中的一个谜题，实现了一个针状的翻转锁机制。"></p>
+<h3 id="落实谜题套路"><a href="#落实谜题套路" class="headerlink" title="落实谜题套路"></a>落实谜题套路</h3><p>看看你是否能实现益智游戏中其他常见的谜题套路，比如两个任务发生冲突，重新打开一扇门，把早期的物体带到后面的区域，等等。</p>
+<h3 id="从一个主题开始"><a href="#从一个主题开始" class="headerlink" title="从一个主题开始"></a>从一个主题开始</h3><p>一个几何或叙事性的 “主题 “可以成为一个关卡的良好前提。例如，一个关于使用大量2x1积木的关卡，一个关于护送一个物体通过许多障碍物的关卡，一个两个角色互相帮助的关卡，等等。另外，根据游戏的情况，你可以尝试制作一个与环境或叙事相关的约束、布局或解决方案的谜题。</p>
+<h3 id="追求一种感觉"><a href="#追求一种感觉" class="headerlink" title="追求一种感觉"></a>追求一种感觉</h3><p>做一个让玩家感到强大、幽闭恐惧、惊讶等的关卡。</p>
+<h3 id="讲个笑话"><a href="#讲个笑话" class="headerlink" title="讲个笑话"></a>讲个笑话</h3><p>将一个机制发挥到其逻辑的极致，找到一个滑稽的设置，建立一个Rube Goldberg机器，建立一些荒谬的东西，以不寻常或愚蠢的方式使用物体（例如，一个有用的物体现在是一个障碍，或者反过来），制作一个看起来很难但实际上很容易的难题，等等。</p>
+<h3 id="留心观察-“事情几乎发生-“的时刻"><a href="#留心观察-“事情几乎发生-“的时刻" class="headerlink" title="留心观察 “事情几乎发生 “的时刻"></a>留心观察 “事情几乎发生 “的时刻</h3><p>有时，一个游戏测试者有一个计划或理论来解决一个谜题，但由于某种原因而没有完全成功。而作为一个开发者，你在制作谜题时，或者在观察人们玩耍时，可能会想到这些失败的理论。”这本可以是一个解决方案！” 试着做一个不同的谜题，让那个差点发生的事情真的发生！”。<br><img src="https://cwpat.me/misc/puzzle-level-idea-strategies/images/parabox_rescue_sequence.webp" srcset="/img/loading.gif" lazyload alt="Patrick&#39;s Parabox中的一个谜题，它是在进一步探索从墙上解救盒子的概念后产生的。"></p>
+<h3 id="澄清一个误解或强化一个定理"><a href="#澄清一个误解或强化一个定理" class="headerlink" title="澄清一个误解或强化一个定理"></a>澄清一个误解或强化一个定理</h3><p>注意游戏者最初对规则的误解，可以为进一步澄清规则提供一个谜题的想法，或者激发一个新的想法。同样地，尝试做一道谜题来加强对游戏者可能没有完全掌握的定理的理解，或者探索一个定理的进一步应用。</p>
+<h3 id="将备用的解决方案变成独立的关卡"><a href="#将备用的解决方案变成独立的关卡" class="headerlink" title="将备用的解决方案变成独立的关卡"></a>将备用的解决方案变成独立的关卡</h3><p>当你或测试者发现谜题的另一种解法时，你可能最终会编辑谜题来禁止它，但也可以考虑制作第二个谜题，在这个谜题中，该另一种解法实际上是被迫的。</p>
+<h3 id="从其他游戏的关卡开始"><a href="#从其他游戏的关卡开始" class="headerlink" title="从其他游戏的关卡开始"></a>从其他游戏的关卡开始</h3><p>看看Microban谜题集，原始的推箱子，或者其他适用的游戏，检查这些关卡在你的游戏规则中是否可以解决，可能会稍作改动，看看你最后的结果如何。(注意：如果你觉得灵感足够丰富，请征得同意并归功于他人。另外：不要剽窃内容，这不是这个策略的目的！)<br><img src="https://cwpat.me/misc/puzzle-level-idea-strategies/images/microban.webp" srcset="/img/loading.gif" lazyload alt="Microban puzzle set的第一关，适用于Patrick&#39;s Parabox"></p>
+<h3 id="翻译谜题"><a href="#翻译谜题" class="headerlink" title="翻译谜题"></a>翻译谜题</h3><p>选择一个完全不同的游戏，并尝试将其中的一个谜题翻译成你的游戏。例如，将《传送门》中的谜题翻译成你的基于网格的推箱子游戏。试图将方枘圆凿的过程是困难和混乱的，你最终会得到一些新的、无法识别的东西。</p>
+<h3 id="将两个关卡连接起来"><a href="#将两个关卡连接起来" class="headerlink" title="将两个关卡连接起来"></a>将两个关卡连接起来</h3><p>从你已经有的两个谜题出发，设计一个 “介于 “这两个之间的谜题。例如，一个介于超级简单和超级复杂的谜题之间的谜题，或者一个在这两者之间分享创意的谜题。</p>
+<h3 id="将难的谜题重新设计成简单的谜题"><a href="#将难的谜题重新设计成简单的谜题" class="headerlink" title="将难的谜题重新设计成简单的谜题"></a>将难的谜题重新设计成简单的谜题</h3><p>以一个简单的谜题为起点，用相同的关卡几何图形制作一个困难的谜题和解决方案。这特别适用于有元谜题或多关卡目标的游戏。</p>
+<h3 id="使用计算机生成或求解"><a href="#使用计算机生成或求解" class="headerlink" title="使用计算机生成或求解"></a>使用计算机生成或求解</h3><p>有些人使用程序根据启发式方法随机生成关卡，然后从那里修改关卡。而有些人则使用解谜程序来帮助突变和完善关卡的过程。就我个人而言，我对这两种方法都不熟悉，我也没有找到任何资源来方便地尝试这两种技术，但我在这里列出它们，以便彻底。</p>
+<h2 id="其他要点"><a href="#其他要点" class="headerlink" title="其他要点"></a>其他要点</h2><h3 id="试验和错误是过程的一部分"><a href="#试验和错误是过程的一部分" class="headerlink" title="试验和错误是过程的一部分"></a>试验和错误是过程的一部分</h3><p>根据我的经验，很多谜题的想法并没有实现，或者说它们实现了一个不那么好的谜题。就我个人而言，我已经习惯于做大量的挖掘工作，并且有很多未使用的谜题草稿，而不会为此感到沮丧。但是，从另一个角度来看，有时一个想法可以导致多个谜题，而不是只有一个！你永远不知道。你永远不知道。 :)</p>
+<h3 id="在迭代的同时调查变化"><a href="#在迭代的同时调查变化" class="headerlink" title="在迭代的同时调查变化"></a>在迭代的同时调查变化</h3><p>在迭代一道谜题的过程中，无论是在最初的构建过程中还是在完善它的过程中，都要对其潜在的变化持开放态度，这些变化可能是他们自己的谜题，例如相关的想法，稍微不同的设置，不同的机制来执行相同的约束，一个更难的版本，一个更容易的版本，在谜题上的一个转折，等等。<br><img src="https://cwpat.me/misc/puzzle-level-idea-strategies/images/microban.webp" srcset="/img/loading.gif" lazyload alt="Patrick&#39;s Parabox中的4个谜题都是同一概念的变化。"></p>
+<h2 id="更多阅读"><a href="#更多阅读" class="headerlink" title="更多阅读"></a>更多阅读</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=B36_OL1ZXVM">Puzzle Game Magic Secrets - Brett Taylor</a><br>这个1小时的讲座是我听到其中一些策略的地方，它还对益智游戏设计的其他部分有很多见解。我强烈推荐它<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=oCHciE9CYfA">30 Puzzle Design Lessons, Extended Director’s Cut - Elyot Grant</a><br>这个3个小时的讲座充满了对谜题和谜题游戏如何工作以及如何制作的洞察力。我也强烈推荐它!<br><a target="_blank" rel="noopener" href="https://discord.gg/9HqeAhXPeh">Thinky Puzzle Games Discord</a><br>这个Discord服务器是一个讨论益智游戏和益智游戏开发的好地方!</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AF%91%E4%BB%8B/">译介</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/">游戏设计</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%A7%A3%E8%B0%9C/">解谜</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/04/07/DesignSummary04/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">解谜游戏的分类与谜题设计[设计总结04]</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/24/t08/">
+                        <span class="hidden-mobile">【译介】完成一份优秀的设计文档</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"095baed027b59c0db4c8","clientSecret":"e60faf26a918110416737e92fde6a27795419886","repo":"blogtalk","owner":"MAXLINqaq","admin":["MAXLINqaq"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '2574a7633c0ebb19292b137fa41d70da'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://maxlinqaq.github.io/about/" target="_blank" rel="nofollow noopener"><span>I</span></a> <i class="iconfont icon-love"></i> <a href="https://maxlinqaq.github.io/404/" target="_blank" rel="nofollow noopener"><span>U</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
